@@ -1,2343 +1,2316 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Playfair Display', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Playfair Display", sans-serif;
 }
 
-header{
-    position: fixed;
-    top: 0;
-    height: 130px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 240px;
-    background-color: #272d3467;
-    z-index: 1;
+header {
+  position: fixed;
+  top: 0;
+  height: 130px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 240px;
+  background-color: #272d3467;
+  z-index: 1;
 }
 
 .logo {
-    width: 200px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 10px;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
 }
 
 .logo-img {
-    width: 40%;
-    height: auto;
+  width: 40%;
+  height: auto;
 }
 
 .logo-text {
-    color: #fff;
-    font-size: 2rem;
+  color: #fff;
+  font-size: 2rem;
 }
 
 .logo-text:hover {
-    color: #cdba6d;
+  color: #cdba6d;
 }
 
 nav {
-    width: 60%;
+  width: 60%;
 }
 
 ul {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-li {
-    font-size: 1.1rem;
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
+a {
+  font-size: 1.1rem;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
 }
 
-li:hover {
-    color: #cdba6d;
-    cursor: pointer;
-    transition: ease 0.5s;
+a:hover {
+  color: #cdba6d;
+  cursor: pointer;
+  transition: ease 0.5s;
 }
 
 #search-icon {
-    color: #fff;
-    cursor: pointer;
+  color: #fff;
+  cursor: pointer;
 }
 
 #search-icon:hover {
-    color: #cdba6d;
+  color: #cdba6d;
 }
 
 #menu-icon {
-    display: none;
-    font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
 }
 
 .modal {
-    width: 100%;
-    height: 130vh;
-    position: absolute;
-    background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 130vh;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .home-container {
-    background-image: url('./assets/background.jpg');
-    background-size: cover;
-    background-position: 50% 50%;
-    width: 100%;
-    height: 130vh;
-    display: flex;
-    justify-content: center;
+  background-image: url("./assets/background.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  height: 130vh;
+  display: flex;
+  justify-content: center;
 }
 
 .presentation-container {
-    width: 50%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 10px;
-    margin-top: 250px;
-    padding: 10px;
-    color: #fff;
-    z-index: 1;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  margin-top: 250px;
+  padding: 10px;
+  color: #fff;
+  z-index: 1;
 }
 
 .presentation-container h3 {
-    letter-spacing: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
+  letter-spacing: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
 }
 
 .presentation-container h1 {
-    font-size: 5rem;
-    text-align: center;
+  font-size: 5rem;
+  text-align: center;
 }
 
 .presentation-container span {
-    color: #cdba6d;
+  color: #cdba6d;
 }
 
 .presentation-container p {
-    text-align: center;
-    font-size: 1.3rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
 }
 
 .presentation-container button {
-    width: 150px;
-    height: 50px;
-    background-color: #cdba6d;
-    color: black;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    border: 2px solid #c8b050;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 50px;
+  width: 150px;
+  height: 50px;
+  background-color: #cdba6d;
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  border: 2px solid #c8b050;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 50px;
 }
 
 .presentation-container button:hover {
-    background-color: transparent;
-    color: #fff;
+  background-color: transparent;
+  color: #fff;
 }
 
 .destaks-container {
-    width: 100%;
-    height: 300px;
-    padding: 0 100px;
-    position: absolute;
-    top: 115vh;
+  width: 100%;
+  height: 300px;
+  padding: 0 100px;
+  position: absolute;
+  top: 115vh;
 }
 
 .destaks-content {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 100%;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100%;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    row-gap: 20px;
-    color: #fff;
-    padding: 0 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 20px;
+  color: #fff;
+  padding: 0 110px;
 }
 
 #square-1 {
-    background-color: #353e47;
+  background-color: #353e47;
 }
 
 #square-1 i {
-    color: #c8b050;
-    font-size: 3rem;
+  color: #c8b050;
+  font-size: 3rem;
 }
 
 .destaks-span {
-    font-size: 1.5rem;
-    font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .destaks-paragraph {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
 }
 
 #destaks-span-gold {
-    color: #c8b050;
+  color: #c8b050;
 }
 
 #square-2 {
-    background-color: #323a43;
+  background-color: #323a43;
 }
 
 #gavel-icon {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 #square-3 {
-    background-color: #2e353d;
-    padding: 0 100px;
+  background-color: #2e353d;
+  padding: 0 100px;
 }
 
 #square-3 i {
-    color: #c8b050;
-    font-size: 3rem;
+  color: #c8b050;
+  font-size: 3rem;
 }
 
 .divider {
-    border: none;
-    border-top: 3px solid #c8b050;
-    border-radius: 20px;
-    margin: 10px 0;
-    width: 100%;
+  border: none;
+  border-top: 3px solid #c8b050;
+  border-radius: 20px;
+  margin: 10px 0;
+  width: 100%;
 }
 
 #divider-white {
-    border-top: 3px solid #fff;
+  border-top: 3px solid #fff;
 }
 
 .welcome-container {
-    width: 100%;
-    height: 110vh;
+  width: 100%;
+  height: 110vh;
 }
 
 .signature-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
 .signature-content {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: end;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: end;
 }
 
 .signature-text {
-    width: 70%;
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    row-gap: 30px;
-    padding: 0 10px;
-    margin-bottom: 90px;
+  width: 70%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 30px;
+  padding: 0 10px;
+  margin-bottom: 90px;
 }
 
 .signature-title {
-    width: 100%;
+  width: 100%;
 }
 
 .signature-title h1 {
-    font-size: 2.5rem;
-    color: #cdba6d;
+  font-size: 2.5rem;
+  color: #cdba6d;
 }
 
 .signature-text h5 {
-    font-weight: 300;
-    letter-spacing: 3px;
+  font-weight: 300;
+  letter-spacing: 3px;
 }
 
 .signature-text span {
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
 }
 
 .signature-text p {
-    font-family: 'Poppins', sans-serif;
-    text-align: justify;
+  font-family: "Poppins", sans-serif;
+  text-align: justify;
 }
 
 .signature-button-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .signature-button-container button {
-    width: 100%;
-    height: 50px;
-    background-color: #cdba6d;
-    color: #000;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    border: 2px solid #c8b050;
-    font-size: 1 rem;
-    cursor: pointer;
+  width: 100%;
+  height: 50px;
+  background-color: #cdba6d;
+  color: #000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  border: 2px solid #c8b050;
+  font-size: 1 rem;
+  cursor: pointer;
 }
 
 .signature-button-container button:hover {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 .signature-button-container img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .attorney-container {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: end;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: end;
 }
 
 .attorney-img {
-    margin-left: 50px;
+  margin-left: 50px;
 }
 
 .our-services-container {
-    width: 100%;
-    height: 100vh;
-    background-color: #323a43;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: #323a43;
+  display: flex;
+  flex-direction: column;
 }
 
 .our-services-title {
-    height: 30%;
-    width: 100%;
-    padding-top: 120px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  height: 30%;
+  width: 100%;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .our-services-title h2 {
-    margin: 0;
-    font-size: 1.3rem;
-    letter-spacing: 6px;
-    font-weight: 500;
-    color: #fff;
+  margin: 0;
+  font-size: 1.3rem;
+  letter-spacing: 6px;
+  font-weight: 500;
+  color: #fff;
 }
 
 .our-services-title h1 {
-    margin: 0;
-    font-size: 3.5rem;
-    color: #c8b050;
+  margin: 0;
+  font-size: 3.5rem;
+  color: #c8b050;
 }
 
 .our-services-content {
-    width: 100%;
-    height: 50%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0 120px;
-    margin-top: 30px;
+  width: 100%;
+  height: 50%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 120px;
+  margin-top: 30px;
 }
 
 #our-services-divider {
-    width: 5%;
+  width: 5%;
 }
 
 .our-services-square {
-    display: flex;
-    width: 100%;
-    height: 200px;
+  display: flex;
+  width: 100%;
+  height: 200px;
 }
 
 .our-services-icon {
-    width: 15%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .our-services-text {
-    width: 85%;
-    height: 100%;
-    padding: 20px 40px 0 10px;
+  width: 85%;
+  height: 100%;
+  padding: 20px 40px 0 10px;
 }
 
 #service-icon {
-    color: #c8b050;
-    font-size: 3rem;
+  color: #c8b050;
+  font-size: 3rem;
 }
 
 #service-icon:hover {
-    color: #fff;
-    cursor: pointer;
-    transition: 1.2s;
+  color: #fff;
+  cursor: pointer;
+  transition: 1.2s;
 }
 
 .services-title {
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin-bottom: 25px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
 }
 
 .services-title:hover {
-    color:#c8b050;
-    cursor: pointer;
-    transition: 1.2s;
+  color: #c8b050;
+  cursor: pointer;
+  transition: 1.2s;
 }
 
 .service-description {
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 500;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .testimonials-container {
-    width: 100%;
-    height: 130vh;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  height: 130vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .testimonials-title {
-    height: 30%;
-    width: 100%;
-    padding-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  height: 30%;
+  width: 100%;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .testimonials-title h2 {
-    color: #5c6f85;
-    margin: 0;
-    font-size: 1.3rem;
-    letter-spacing: 6px;
-    font-weight: 500;
+  color: #5c6f85;
+  margin: 0;
+  font-size: 1.3rem;
+  letter-spacing: 6px;
+  font-weight: 500;
 }
 
 .testimonials-title h1 {
-    margin: 0;
-    font-size: 3.5rem;
-    color: #c8b050;
+  margin: 0;
+  font-size: 3.5rem;
+  color: #c8b050;
 }
 
 .testimonials-cards-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 30px;
-    column-gap: 50px;
-    width: 100%;
-    height: 600px;
-    padding: 0 120px;
-    
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 30px;
+  column-gap: 50px;
+  width: 100%;
+  height: 600px;
+  padding: 0 120px;
 }
 
 .cards {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 30px;
-    padding: 10px 40px 40px 40px;
-    background-color: #f8f8f9;
-    box-shadow: -1px 5px 7px 0 rgba(0,0,0,0.15);
-    cursor: pointer;
-    transition: 1s;
-    border-radius: 20px;
-
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 30px;
+  padding: 10px 40px 40px 40px;
+  background-color: #f8f8f9;
+  box-shadow: -1px 5px 7px 0 rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: 1s;
+  border-radius: 20px;
 }
 
 .testimonial-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-size: cover;
-    background-position: 50% 50%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
 #testimony-icon {
-    font-size: 3rem;
-    color: #c8b050;
-    opacity: 0,5;
+  font-size: 3rem;
+  color: #c8b050;
+  opacity: 0, 5;
 }
 
 .testimony {
-    text-align: center;
-    color: #5c6f85;
-    font-size: 1.2rem;
-    font-style: italic;
-    font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #5c6f85;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-family: "Poppins", sans-serif;
 }
 
 .testimonial-name {
-    font-size: 1,5rem;
-    color: #2e353d;
+  font-size: 1, 5rem;
+  color: #2e353d;
 }
 
 .testimonial-profession {
-    font-size: 1,3rem;
-    color: #c8b050;
-    font-family: 'Poppins', sans-serif;
+  font-size: 1, 3rem;
+  color: #c8b050;
+  font-family: "Poppins", sans-serif;
 }
 
 #testimonial-1 {
-    background-image: url(./assets/testimonials01.jpg);
+  background-image: url(./assets/testimonials01.jpg);
 }
 
 #testimonial-2 {
-    background-image: url(./assets/testimonials02.jpg);
+  background-image: url(./assets/testimonials02.jpg);
 }
 
 #testimonial-3 {
-    background-image: url(./assets/testimonials03.jpg);
+  background-image: url(./assets/testimonials03.jpg);
 }
 
 .form-container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
+  width: 100%;
+  height: 100vh;
+  display: flex;
 }
 
 .form-img {
-    background-image: url(./assets/banner1.jpg);
-    background-position: 50% 50%;
-    background-size: cover;
-    width: 50%;
-    height: 100%;
+  background-image: url(./assets/banner1.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  width: 50%;
+  height: 100%;
 }
 
 .form-content {
-    background-color: #323a43;
-    width: 50%;
-    height: 100%;
-    padding: 120px 80px 60px 80px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 60px; 
+  background-color: #323a43;
+  width: 50%;
+  height: 100%;
+  padding: 120px 80px 60px 80px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 60px;
 }
 
 .form-title {
-    height: 15%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+  height: 15%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-title h2 {
-    margin: 0;
-    font-size: 1.3rem;
-    letter-spacing: 6px;
-    font-weight: 500;
-    color: #fff;
+  margin: 0;
+  font-size: 1.3rem;
+  letter-spacing: 6px;
+  font-weight: 500;
+  color: #fff;
 }
 
 .form-title h1 {
-    margin: 0;
-    font-size: 3.5rem;
-    color: #c8b050;
+  margin: 0;
+  font-size: 3.5rem;
+  color: #c8b050;
 }
 
 #form-divider {
-    width: 15%;
-    margin-top: 20px;
+  width: 15%;
+  margin-top: 20px;
 }
 
 .form-description {
-    text-align: justify;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #fff;
+  text-align: justify;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
 }
 
 .form-inputs {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
 }
 
 .first-inputs {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .input-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    width: 49%;
-    background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 49%;
+  background-color: #fff;
 }
 
 .user-input {
-    height: 100%;
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1,1rem;
-    color: #2e353d;
-    padding: 0 10px;
-    border: none;
-    outline: none;
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-size: 1, 1rem;
+  color: #2e353d;
+  padding: 0 10px;
+  border: none;
+  outline: none;
 }
 
 #user-name-input {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#user-icon { 
-   color: #5c6f85;
-   margin-left: 10px;
+#user-icon {
+  color: #5c6f85;
+  margin-left: 10px;
 }
 
 #email-icon {
-    color: #5c6f85;
-    margin-left: 10px;
+  color: #5c6f85;
+  margin-left: 10px;
 }
 
 #user-phone-input {
-    margin-top: 10px;
-    width: 100%;
+  margin-top: 10px;
+  width: 100%;
 }
 
 #phone-icon {
-    color: #5c6f85;
-    margin-left: 10px;
+  color: #5c6f85;
+  margin-left: 10px;
 }
 
 #user-message-input {
-    width: 97%;
-    height: 200px;
-    margin-top: 10px;
+  width: 97%;
+  height: 200px;
+  margin-top: 10px;
 }
 
 #user-message {
-    max-width: 100%;
-    max-height: 100%;
-    min-width: 100%;
-    min-height: 100%;
-    resize: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    color: #2e353d;
-    padding: 10px;
-    border: none;
-    outline: none;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  resize: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  color: #2e353d;
+  padding: 10px;
+  border: none;
+  outline: none;
 }
 
 #pencil-icon {
-    color: #5c6f85;
-    margin-top: -155px;
-    margin-left: 35px;
+  color: #5c6f85;
+  margin-top: -155px;
+  margin-left: 35px;
 }
 
 .submit-button {
-    width: 175px;
-    height: 60px;
-    color: #2e353d;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    border: 2px solid #cdba6d;
-    font-size: 1.1rem;
-    cursor: pointer;
-    margin-top: 60px;
-    background-color: rgba(205, 186, 109, .6);
-    transition: all 0.5s;
-    transform: translate(0, 0);
+  width: 175px;
+  height: 60px;
+  color: #2e353d;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  border: 2px solid #cdba6d;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-top: 60px;
+  background-color: rgba(205, 186, 109, 0.6);
+  transition: all 0.5s;
+  transform: translate(0, 0);
 }
 
 .submit-button:hover {
-    background-color: transparent;
-    color: #fff
+  background-color: transparent;
+  color: #fff;
 }
 
 footer {
-    width: 100%;
-    height: 90vh;
-    background-color: #323a43;
-    padding: 220px 140px 80px 140px; 
+  width: 100%;
+  height: 90vh;
+  background-color: #323a43;
+  padding: 220px 140px 80px 140px;
 }
 
 .footer-content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .about-text {
-    width: 40%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    row-gap: 70px;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 70px;
 }
 
 .about-text h2 {
-    color: #c8b050;
-    margin: 0;
-    font-size: 1rem;
-    letter-spacing: 6px;
-    font-weight: 700;
+  color: #c8b050;
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 6px;
+  font-weight: 700;
 }
 
 .about-text p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: #fff;
-    line-height: 2;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 2;
 }
 
 .social-media {
-    display: flex;
-    column-gap: 20px;
+  display: flex;
+  column-gap: 20px;
 }
 
 .social-media i {
-    font-size: 1.3rem;
-    color: #fff;
-    cursor: pointer;
+  font-size: 1.3rem;
+  color: #fff;
+  cursor: pointer;
 }
 
 #facebook-icon:hover {
-    color: #007bff;
-    transition: 1.1s;
+  color: #007bff;
+  transition: 1.1s;
 }
 
 #telegram-icon:hover {
-    color: #17a2b8;
-    transition: 1.1s;
+  color: #17a2b8;
+  transition: 1.1s;
 }
 
 #linkedin-icon:hover {
-    color: #007bff;
-    transition: 1.1s;
+  color: #007bff;
+  transition: 1.1s;
 }
 
 #instagram-icon:hover {
-    color: #007bff;
-    transition: 1.1s;
+  color: #007bff;
+  transition: 1.1s;
 }
 
 #youtube-icon:hover {
-    color: #dc3545;
-    transition: 1.1s;
+  color: #dc3545;
+  transition: 1.1s;
 }
 
 .theme-posts {
-    width: 40%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .theme-posts h2 {
-    color: #c8b050;
-    margin: 0;
-    font-size: 1rem;
-    letter-spacing: 6px;
-    font-weight: 700;
-    margin-bottom: 40px;
+  color: #c8b050;
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 6px;
+  font-weight: 700;
+  margin-bottom: 40px;
 }
 
 .posts {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 15px;
-    display: flex;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 15px;
+  display: flex;
 }
 
 .post-img {
-    width: 20%;
-    height: auto;
+  width: 20%;
+  height: auto;
 }
 
 .post-content {
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0 80px 0 10px;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 80px 0 10px;
 }
 
 .post-content p {
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .post-content p:hover {
-    color: #c8b050;
+  color: #c8b050;
 }
 
 .post-date {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    column-gap: 15px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  column-gap: 15px;
 }
 
 #clock-icon {
-    color: #c8b050;
+  color: #c8b050;
 }
 
 .post-date span {
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    font-weight: 500;
-    font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 
 .copyright {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .copyright span {
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 6px;
-    color: #2e353d;
-    font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 6px;
+  color: #2e353d;
+  font-size: 0.9rem;
 }
-
 
 .background-rgba {
-    width: 100%;
-    height: 80vh;
-    position: absolute;
-    opacity: 0.8;
-    background-color: #323a43
+  width: 100%;
+  height: 80vh;
+  position: absolute;
+  opacity: 0.8;
+  background-color: #323a43;
 }
 .client-numbers {
-    background-position: 50% 10%;
-    height: 80vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  background-position: 50% 10%;
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .special-heading {
-    line-height: 1.15;
-    position: relative;
-    margin-bottom: 0;
-    margin-top: 0;
-    font-weight: 400;
+  line-height: 1.15;
+  position: relative;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-weight: 400;
 }
 
 .title-numbers {
-    height: 20%;
-    width: 100%;
-    padding-top: 170px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    row-gap: 10px;
+  height: 20%;
+  width: 100%;
+  padding-top: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 10px;
 }
 
 .advantages-text {
-    margin: 0;
-    font-size: 1rem;
-    letter-spacing: 6px;
-    font-weight: 400;
-    color: #fff;
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 6px;
+  font-weight: 400;
+  color: #fff;
 }
 
 .choose-us {
-    font-size: 3.5rem;
-    font-weight: 500;
-    color: #cdba6d;
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: #cdba6d;
 }
 
 #number-divider {
-    margin-left: 130px;
-    width: 25%;
-    margin-top: 30px;
-    border-top: 2px solid #c8b050;
+  margin-left: 130px;
+  width: 25%;
+  margin-top: 30px;
+  border-top: 2px solid #c8b050;
 }
 
 .space-divider-space {
-    clear: both;
-    width: 100%
+  clear: both;
+  width: 100%;
 }
 
 .trust-number-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding: 0 120px;
+  position: relative;
+  justify-content: space-around;
+}
+
+#trust-text-divider {
+  width: 2px;
+  background-color: #c8b050;
+  height: 150px;
+  margin-top: 100px;
+}
+
+.counter-text {
+  color: #fff;
+}
+
+.text-trust-client {
+  color: #f8f8f9 margin 0;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.number-trust-client {
+  color: #c8b050;
+  font-weight: 300;
+  font-size: 60px;
+  margin-top: 80px;
+  margin-bottom: 0.25em;
+  text-align: center;
+}
+
+.our-attorneys {
+  height: 110vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.attorney-text {
+  height: 30%;
+  width: 100%;
+  padding-top: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lawyer-text {
+  color: #5c6f85;
+  font-size: 1rem;
+  letter-spacing: 3px;
+}
+
+.divider-lg-60 {
+  margin-top: 60px;
+}
+
+.imgs-attorneys {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#attorney-1 {
+  background-image: url(./assets/team01-1.png);
+  background-size: 400px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+#attorney-2 {
+  background-image: url(./assets/team06.png);
+  background-size: 400px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+#attorney-3 {
+  background-image: url(./assets/team04.png);
+  background-size: 400px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.img-attorney {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  padding: 10px 40px 40px 40px;
+  cursor: pointer;
+}
+
+.attorney-name {
+  background-color: #323a43;
+  padding: 11px 30px;
+  width: 100%;
+  margin-top: 600px;
+  height: 9%;
+}
+
+.name-lawyer {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.3rem;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-lawyer:hover {
+  transition: 1s;
+  color: #c8b050;
+}
+
+.blog-news {
+  height: 150vh;
+}
+
+.blog-news-container {
+  padding: 115px 15px 150px;
+}
+
+.blog-news-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-text {
+  height: 30%;
+  width: 100%;
+  padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#our-blog-news {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+#blog-divider {
+  margin-left: 130px;
+  width: 25%;
+  margin-top: 30px;
+  border-top: 2px solid #c8b050;
+}
+
+.imgs-text-blogs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 50px;
+  margin-left: 200px;
+}
+
+.img-blog-text {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  width: 800px;
+}
+
+.img-judge {
+  background-image: url(./assets/banner2.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.container-blog-span {
+  width: 100%;
+  height: 330px;
+}
+
+.container-blog-span:hover {
+  background-color: #323a43;
+  opacity: 0.7;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.comments-blog {
+  background-color: #c8b050;
+  color: #323a43;
+  padding: 3px 9px;
+  font-family: "Poppins", sans-serif;
+  margin-left: 30px;
+  position: relative;
+  top: 30px;
+}
+
+.complete-text {
+  padding: 50px 65px 0;
+}
+
+.entry-header {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.title-blog {
+  font-size: 1.3rem;
+  color: #323a43;
+  text-decoration: none;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.title-blog:hover {
+  color: #c8b050;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.sub-title-blog {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.sub-title-blog:hover {
+  cursor: pointer;
+  color: #c8b050;
+  transition: 0.5;
+}
+
+.emma {
+  font-family: "Poppins", sans-serif;
+  color: #5c6f85;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.emma:hover {
+  cursor: pointer;
+  color: #c8b050;
+  transition: 0.5s;
+}
+
+#emma-divider {
+  height: 18px;
+  background-color: #5c6f85;
+  width: 2px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 3px;
+  border: none;
+  opacity: 0.8;
+}
+
+.blog-date {
+  font-family: "Playfair Display", serif;
+  color: #5c6f85;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+.blog-date:hover {
+  cursor: pointer;
+  color: #c8b050;
+  transition: 0.5s;
+}
+
+.blog-paragraph {
+  margin-top: 1rem;
+}
+
+.paragraph-blog-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #5c6f85;
+  text-align: left;
+  letter-spacing: 0px;
+  line-height: 30px;
+}
+
+.view-details {
+  margin-top: 65px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  position: relative;
+  color: #323a43;
+  font-size: 12px;
+}
+
+.view-details:hover {
+  cursor: pointer;
+}
+
+#view-divider {
+  border-top: 1px solid #323a43;
+  width: 9.2rem;
+}
+
+.view-blog-details:hover {
+  cursor: pointer;
+  color: #c8b050;
+  transition: 0.5s;
+}
+
+.two-blogs-imgs {
+  padding: 0 15px;
+  width: 55%;
+}
+
+.img-chess-container {
+  height: 50%;
+}
+
+.img-chess-media {
+  background-image: url(./assets/blog02.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 60%;
+  background-position: bottom;
+}
+
+.img-hammer-container {
+  margin-top: 125px;
+  height: 50%;
+}
+
+#chess-span {
+  height: 100%;
+}
+
+#hammer-span {
+  height: 100%;
+}
+
+.text-blog-content {
+  background-color: #323a43;
+  height: 40%;
+  padding: 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+.aleatory-text {
+  color: white;
+  font-size: 20px;
+}
+
+.aleatory-text:hover {
+  cursor: pointer;
+  color: #c8b050;
+  transition: 0.5s;
+}
+
+#change-color {
+  color: #fff;
+}
+
+.change-color {
+  height: 18px;
+  background-color: #fff;
+  width: 2px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 3px;
+  border: none;
+}
+
+#chess-date {
+  margin-top: 20px;
+}
+
+.img-hammer-media {
+  background-image: url(./assets/blog09-970x600.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 60%;
+  background-position: bottom;
+}
+
+@media (max-width: 1800px) {
+  .two-blogs-imgs {
+    width: 70%;
+  }
+
+  .text-blog-content {
+    padding: 0;
+    padding-left: 5px;
+  }
+
+  #chess-date {
+    margin-top: 30px;
+  }
+
+  .submit-button {
+    margin-top: 10px;
+  }
+
+  .our-attorneys {
+    height: 130vh;
+  }
+}
+
+@media (max-width: 1440px) {
+  .content {
+    padding: 0 90px;
+  }
+
+  #square-3 {
+    padding: 0 60px;
+  }
+
+  .testimonials-cards-container {
+    padding: 0 100px;
+  }
+
+  .post-content {
+    padding: 0 55px 0 10px;
+  }
+
+  #user-message-input {
+    width: 96%;
+  }
+
+  .two-blogs-imgs {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1280px) {
+  header {
+    padding: 0 40px;
+  }
+
+  .destaks-container {
+    padding: 0 60px;
+  }
+
+  .testimonials-cards-container {
+    padding: 0 130px;
+  }
+
+  #user-message-input {
+    width: 95%;
+  }
+
+  footer {
+    padding: 220px 60px 80px 60px;
+  }
+
+  .imgs-text-blogs {
+    margin-left: 80px;
+  }
+}
+
+@media (max-height: 800px) {
+  .presentation-container {
+    margin-top: 150px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .destaks-container {
+    padding: 0 20px;
+    height: 200px;
+  }
+
+  .imgs-text-blogs {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .blog-news {
+    height: 200vh;
+  }
+
+  #chess-date {
+    margin-top: 10px;
+  }
+
+  .two-blogs-imgs {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+  }
+
+  .img-chess-container {
+    margin-top: 50px;
+    height: 300px;
+    width: 400px;
+  }
+
+  .img-chess-media {
+    height: 100%;
+  }
+
+  .img-hammer-container {
+    margin-top: 50px;
+    height: 300px;
+    width: 400px;
+  }
+
+  .img-hammer-media {
+    height: 100%;
+  }
+
+  .destaks-paragraph {
+    font-size: 15px;
+  }
+
+  .presentation-container {
+    margin-top: 150px;
+  }
+
+  .content {
+    row-gap: 10px;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  .presentation-container h1 {
+    font-size: 4rem;
+  }
+
+  .presentation-container p {
+    font-size: 1rem;
+  }
+
+  .presentation-container button {
+    margin-top: 1px;
+  }
+
+  .our-services-content {
+    padding: 0 40px;
+  }
+
+  .content {
+    padding: 0 60px;
+  }
+
+  .signature-text {
+    width: 80%;
+    font-size: 0.8rem;
+  }
+
+  .signature-title h1 {
+    margin-top: 10px;
+  }
+
+  .attorney-img {
+    height: 500px;
+  }
+
+  #square-3 {
+    padding: 0 40px;
+  }
+
+  .testimonials-cards-container {
+    padding: 0 80px;
+    height: 10px;
+    margin-bottom: 100rem;
+  }
+
+  .form-content {
+    padding: 120px 20px 60px 20px;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .form-title h2 {
+    margin-top: 50px;
+  }
+
+  .form-title h1 {
+    font-size: 2.5rem;
+    margin-top: 5px;
+  }
+
+  .form-description {
+    font-size: 16px;
+    margin-top: 50px;
+  }
+
+  .form-inputs {
+    justify-content: flex-start;
+  }
+
+  .form-img {
+    height: 680px;
+    height: 100%;
+  }
+
+  #user-message-input {
+    width: 95%;
+  }
+
+  .submit-button {
+    margin-top: 10px;
+  }
+
+  footer {
+    padding: 80px 30px 80px 30px;
+  }
+
+  .theme-posts {
+    width: 50%;
+    margin-top: 50px;
+  }
+
+  .about-text {
+    margin-top: 50px;
+    row-gap: 40px;
+  }
+
+  .trust-number-container {
     display: flex;
     align-items: center;
     width: 100%;
     height: auto;
-    padding: 0 120px;
+    padding: 0 80px;
     position: relative;
-    justify-content: space-around ; 
-}
+    justify-content: space-between;
+  }
 
-#trust-text-divider {
-    width: 2px;
-    background-color: #c8b050;
-    height: 150px;
-    margin-top: 100px;
-}
+  #attorney-3 {
+    display: none;
+  }
 
-.counter-text {
-    color: #fff;
-}
-
-.text-trust-client { 
-    color: #f8f8f9
-    margin 0;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-    font-weight: 400;
-}
-
-.number-trust-client {
-    color: #c8b050;
-    font-weight: 300;
-    font-size: 60px;
-    margin-top: 80px;
-    margin-bottom: 0.25em;
-    text-align: center;
-}
-
-.our-attorneys {
-    height: 110vh;
-    width: 100%;
+  .attorney-img-container {
     display: flex;
-    flex-direction: column;
-}
-
-.attorney-text {
-    height: 30%;
-    width: 100%;
-    padding-top: 180px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.lawyer-text {
-    color: #5c6f85;
-    font-size: 1rem;
-    letter-spacing: 3px;
-}
-
-.divider-lg-60 {
-    margin-top: 60px;
-}
-
-.imgs-attorneys {
     width: 100%;
     height: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
+  }
 
-
-#attorney-1 {
-    background-image: url(./assets/team01-1.png);
-    background-size: 400px;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-}
-
-#attorney-2 {
-    background-image: url(./assets/team06.png);
-    background-size: 400px;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-}
-
-#attorney-3 {
-    background-image: url(./assets/team04.png);
-    background-size: 400px;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-}
-
-.img-attorney {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    row-gap: 10px;
-    padding: 10px 40px 40px 40px;
-    cursor: pointer;
-}
-
-.attorney-name {
-    background-color: #323a43;
-    padding: 11px 30px;
-    width: 100%;
-    margin-top: 600px;
-    height: 9%;
-}
-
-.name-lawyer {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.3rem;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.name-lawyer:hover {
-    transition: 1s;
-    color: #c8b050;
-}
-
-
-.blog-news {
-    height: 150vh
-}
-
-.blog-news-container {
-    padding: 115px 15px 150px;
-}
-
-.blog-news-content {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 15px;
-    align-items: center;
-    justify-content: center;
-}
-
-.blog-text {
-    height: 30%;
-    width: 100%;
-    padding-top: 0px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center
-}
-
-
-#our-blog-news {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-}
-
-#blog-divider {
-    margin-left: 130px;
-    width: 25%;
-    margin-top: 30px;
-    border-top: 2px solid #c8b050;
-}
-
-.imgs-text-blogs {
-    display: grid;
+  .imgs-attorneys {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 50px;
-    margin-left: 200px;
-}
+  }
 
-.img-blog-text {
-    display: flex;
-    flex-direction: column;
-    padding: 0 15px;
-    width: 800px;
-}
-
-.img-judge {
-    background-image: url(./assets/banner2.jpg);
+  .img-attorney {
+    height: 700px;
     background-size: cover;
-    background-position: center;
-
-}
-
-.container-blog-span {
-   width: 100%;
-   height: 330px;
-}
-
-.container-blog-span:hover {
-    background-color: #323a43;
-    opacity: 0.7;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.comments-blog {
-    background-color: #c8b050;
-    color: #323a43;
-    padding: 3px 9px;
-    font-family: 'Poppins', sans-serif;
-    margin-left: 30px;
-    position: relative;
-    top: 30px;
-}
-
-.complete-text {
-    padding: 50px 65px 0;
-}
-
-.entry-header {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.title-blog {
-    font-size: 1.3rem;
-    color: #323a43;
-    text-decoration: none;
-    font-family: 'Playfair Display', serif;
-    font-weight: 500;
-    line-height: 1.5;
-}
-
-.title-blog:hover {
-    color: #c8b050;
-    transition: 0.6s;
-    cursor: pointer;
-}
-
-.sub-title-blog {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
-
-.sub-title-blog:hover {
-    cursor: pointer;
-    color: #c8b050;
-    transition: 0.5;
-}
-
-.emma {
-    font-family: 'Poppins', sans-serif;
-    color: #5c6f85;
-    font-size: 16px;
-    font-weight: 300;
-}
-
-.emma:hover {
-    cursor: pointer;
-    color: #c8b050;
-    transition: 0.5s;
-}
-
-#emma-divider {
-    height: 18px;
-    background-color: #5c6f85;
-    width: 2px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 3px;
-    border: none;
-    opacity: 0.8;
-}
-
-.blog-date {
-    font-family: 'Playfair Display', serif;
-    color: #5c6f85;
-    font-size: 16px;
-    font-weight: 300;
-    text-transform: capitalize;
-}
-
-.blog-date:hover {
-    cursor: pointer;
-    color: #c8b050;
-    transition: 0.5s;
-}
-
-.blog-paragraph {
-    margin-top: 1rem;
-}
-
-.paragraph-blog-text {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    color: #5c6f85;
-    text-align: left;
-    letter-spacing: 0px;
-    line-height: 30px;
-}
-
-.view-details {
-    margin-top: 65px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    position: relative;
-    color: #323a43;
-    font-size: 12px;
-}
-
-.view-details:hover {
-    cursor: pointer;
-}
-
-#view-divider {
-    border-top: 1px solid #323a43;
-    width: 9.2rem;
-}
-
-.view-blog-details:hover {
-    cursor: pointer;
-    color: #c8b050;
-    transition: 0.5s;
-}
-
-.two-blogs-imgs {
-    padding: 0 15px;
-    width: 55%;
-}
-
-.img-chess-container {
-    height: 50%;
-}
-
-.img-chess-media {
-    background-image: url(./assets/blog02.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 60%;
-    background-position: bottom;
-}
-
-.img-hammer-container {
-    margin-top: 125px;
-    height: 50%;
-}
-
-#chess-span {
-    height: 100%;
-}
-
-#hammer-span {
-    height: 100%;
-}
-
-.text-blog-content {
-    background-color: #323a43;
-    height: 40%;
-    padding: 30px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.aleatory-text {
-    color: white;
-    font-size: 20px;
-}
-
-.aleatory-text:hover {
-    cursor: pointer;
-    color: #c8b050;
-    transition: 0.5s;
-}
-
-#change-color {
-    color: #fff;
-}
-
-.change-color {
-    height: 18px;
-    background-color: #fff;
-    width: 2px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 3px;
-    border: none;
-}
-
-#chess-date {
-    margin-top: 20px;
-}
-
-.img-hammer-media {
-    background-image: url(./assets/blog09-970x600.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 60%;
-    background-position: bottom;
-}
-
-@media (max-width: 1800px) {
-
-    .two-blogs-imgs {
-        width: 70%;
-    }
-
-    .text-blog-content {
-        padding: 0;
-        padding-left: 5px;
-    }
-
-    #chess-date {
-        margin-top: 30px;
-    }
-
-    .submit-button {
-        margin-top: 10px;
-    }
-
-    .our-attorneys {
-        height: 130vh;
-    }
-}  
-
-
-@media (max-width: 1440px) {
-    .content {
-        padding: 0 90px;
-    }
-    
-    #square-3 {
-        padding: 0 60px;
-    }
-    
-    .testimonials-cards-container {
-        padding: 0 100px;
-    }
-
-    .post-content {
-        padding: 0 55px 0 10px;
-    }
-
-    #user-message-input {
-        width: 96%;
-    }
-
-    .two-blogs-imgs {
-        width: 100%;
-    }
-
-}
-
-@media (max-width: 1280px) {
-    header {
-        padding: 0 40px;
-    }
-
-    .destaks-container {
-        padding: 0 60px;
-    }
-
-    .testimonials-cards-container {
-        padding: 0 130px;
-    }
-
-    #user-message-input {
-        width: 95%;
-    }
-
-    footer {
-        padding: 220px 60px 80px 60px;
-    }
-
-    .imgs-text-blogs {
-        margin-left: 80px;
-    }
-}
-
-@media (max-height: 800px) {
-    .presentation-container {
-        margin-top: 150px;
-    }
-}
-
-@media (max-width: 1024px) {
-    
-    .destaks-container {
-        padding: 0 20px;
-        height: 200px;
-    }
-
-    .imgs-text-blogs {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: start;
-    }
-
-    .blog-news {
-        height: 200vh;
-    }
-
-    #chess-date {
-        margin-top: 10px;
-    }
-
-    .two-blogs-imgs {
-        width: 50%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 50px;
-    }
-
-    .img-chess-container {
-        margin-top: 50px;
-        height: 300px;
-        width: 400px;
-    }
-
-    .img-chess-media {
-        height: 100%;
-    }
-
-    .img-hammer-container {
-        margin-top: 50px;
-        height: 300px;
-        width: 400px;
-    }
-
-    .img-hammer-media {
-        height: 100%;
-    }
-
-    .destaks-paragraph {
-        font-size: 15px;
-    }
-
-    .presentation-container {
-        margin-top: 150px;
-    }
-
-    .content {
-        row-gap: 10px;
-    }
-
-    h5 {
-        font-size: 1rem;
-    }
-
-    .presentation-container h1 {
-        font-size: 4rem;
-    }
-
-    .presentation-container p {
-        font-size: 1rem;
-    }
-
-    .presentation-container button {
-        margin-top: 1px;
-    }
-
-    .our-services-content {
-        padding: 0 40px;
-    }
-
-    .content {
-        padding: 0 60px;
-    }
-
-    .signature-text {
-        width: 80%;
-        font-size: 0.8rem;
-    }
-
-    .signature-title h1 {
-        margin-top: 10px;
-    }
-    
-    .attorney-img {
-        height: 500px;
-    }
-
-    #square-3 {
-        padding: 0 40px;
-    }
-
-    .testimonials-cards-container {
-        padding: 0 80px;
-        height: 10px;
-        margin-bottom: 100rem;
-    }
-
-    .form-content {
-        padding: 120px 20px 60px 20px;
-        height: 100%;
-        justify-content: center;
-    }
-
-
-    .form-title h2 {
-        margin-top: 50px;
-    } 
-
-    .form-title h1 {
-        font-size: 2.5rem;
-       margin-top: 5px;
-    }
-
-    .form-description {
-      font-size: 16px;
-      margin-top: 50px;
-    }
-
-    .form-inputs {
-      justify-content: flex-start;
-    }
-
-    .form-img {
-        height: 680px;
-        height: 100%;
-    }
-
-    #user-message-input {
-        width: 95%;
-    }
-
-    .submit-button {
-        margin-top: 10px;
-    }
-
-    footer {
-        padding: 80px 30px 80px 30px;
-    }
-
-    .theme-posts {
-        width: 50%;
-        margin-top: 50px;
-    }
-
-    .about-text {
-        margin-top: 50px;
-        row-gap: 40px;
-    }
-   
-
-    .trust-number-container {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: auto;
-        padding: 0 80px;
-        position: relative;
-        justify-content: space-between;
-    }
-    
-    #attorney-3 {
-        display: none;
-    }
-
-    .attorney-img-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-    }
-
-    .imgs-attorneys {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .img-attorney {
-        height: 700px;
-        background-size: cover;
-        padding: 10px 0px 10px 10px;
-    }
-
-    .our-attorneys {
-        height: 130vh;
-    }
-
-    .attorney-text {
-        padding-top: 130px;
-    }
+    padding: 10px 0px 10px 10px;
+  }
+
+  .our-attorneys {
+    height: 130vh;
+  }
+
+  .attorney-text {
+    padding-top: 130px;
+  }
 }
 
 @media (max-width: 915px) {
-    nav{
-        display: none;
-    }
+  nav {
+    display: none;
+  }
 
-    .img-hammer-container {
-        width: 300px;
-    }
+  .img-hammer-container {
+    width: 300px;
+  }
 
-    .imgs-text-blogs {
-        margin-left: 30px;
-    }
+  .imgs-text-blogs {
+    margin-left: 30px;
+  }
 
-    .blog-news {
-        height: 130vh;
-    }
+  .blog-news {
+    height: 130vh;
+  }
 
-    .img-chess-container {
-        width: 300px;
-    }
+  .img-chess-container {
+    width: 300px;
+  }
 
-    #menu-icon {
-        display: block;
-    }
+  #menu-icon {
+    display: block;
+  }
 
-    .home-container {
-        background-position: 70% 50%;
-        align-items: center;
-    }
+  .home-container {
+    background-position: 70% 50%;
+    align-items: center;
+  }
 
-    .presentation-container {
-        width: 90%;
-        margin-top: 0;
-    }
+  .presentation-container {
+    width: 90%;
+    margin-top: 0;
+  }
 
-    .destaks-container {
-        padding: 0 40px;
-        top: 135vh;
-    }
+  .destaks-container {
+    padding: 0 40px;
+    top: 135vh;
+  }
 
-    .destaks-content {
-        grid-template-columns: repeat(1, 1fr);
-        row-gap: 10px;
-    }
+  .destaks-content {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 10px;
+  }
 
-    .content {
-        height: 200px;
-        row-gap: 10px;
-        padding: 0 20px;
-        border-radius: 10px;
-    }
+  .content {
+    height: 200px;
+    row-gap: 10px;
+    padding: 0 20px;
+    border-radius: 10px;
+  }
 
-    .welcome-container {
-        height: 130vh;
-    }
+  .welcome-container {
+    height: 130vh;
+  }
 
-    .signature-text {
-        width: 95%;
-        height: 30%;
-        row-gap: 30px;
-        padding: 0 10px;
-    }
+  .signature-text {
+    width: 95%;
+    height: 30%;
+    row-gap: 30px;
+    padding: 0 10px;
+  }
 
-    .attorney-img {
-        margin-left: 10px;
-        width: 90%;
-    }
+  .attorney-img {
+    margin-left: 10px;
+    width: 90%;
+  }
 
-    .our-services-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .our-services-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .testimonials-container {
-        height: 85vh;
-    }
+  .testimonials-container {
+    height: 85vh;
+  }
 
-    #card-1 {
-        display: none;
-    }
+  #card-1 {
+    display: none;
+  }
 
-    #card-2 {
-        display: none;
-    }
+  #card-2 {
+    display: none;
+  }
 
-    #card-3 {
-        margin-left: 150px;
-    }
+  #card-3 {
+    margin-left: 150px;
+  }
 
-    .form-container {
-        flex-direction: column;
-    }
+  .form-container {
+    flex-direction: column;
+  }
 
-    .form-img {
-        height: 40%;
-        width: 100%;
-    }
+  .form-img {
+    height: 40%;
+    width: 100%;
+  }
 
-    .form-content {
-        width: 100%;
-        height: 60%;
-        padding: 120px 40px 60px 40px;
-        row-gap: 30px;
-    }
+  .form-content {
+    width: 100%;
+    height: 60%;
+    padding: 120px 40px 60px 40px;
+    row-gap: 30px;
+  }
 
-    #user-message-input {
-        width: 97%;
-    }
+  #user-message-input {
+    width: 97%;
+  }
 
-    footer {
-        padding: 100px 40px 0 40px;
-        height: 90vh;
-    }
+  footer {
+    padding: 100px 40px 0 40px;
+    height: 90vh;
+  }
 
-    .footer-content {
-        flex-direction: column;
-        justify-content: center;
-    }
+  .footer-content {
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    .about-text {
-        width: 100%;
-        height: 40%;
-    }
+  .about-text {
+    width: 100%;
+    height: 40%;
+  }
 
-    .theme-posts {
-        width: 100%;
-        height: 45%;
-    }
+  .theme-posts {
+    width: 100%;
+    height: 45%;
+  }
 
-    .post-content {
-        padding: 0 140px 0 10px;
-    }
+  .post-content {
+    padding: 0 140px 0 10px;
+  }
 
-    .trust-number-container {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        width: 100%;
-        height: 100%;
-        padding-top: 0px;
-        position: relative;
-    }
+  .trust-number-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    height: 100%;
+    padding-top: 0px;
+    position: relative;
+  }
 
-    .number-trust-client {
-        margin-top: 10px;
-    }
+  .number-trust-client {
+    margin-top: 10px;
+  }
 
-    .text-trust-client { 
-        color: #f8f8f9;
-        display: flex;
-        justify-content: center;
-        font-size: 1.5rem;
-        letter-spacing: 3px;
-        font-weight: 400;
-    }
+  .text-trust-client {
+    color: #f8f8f9;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    font-weight: 400;
+  }
 
-    #trust-text-divider {
-        display: none;
-    }
+  #trust-text-divider {
+    display: none;
+  }
 
-    .client-numbers {
-        background-position: 65% 50%;
-    }
+  .client-numbers {
+    background-position: 65% 50%;
+  }
 
-    .title-numbers {
-        padding-top: 30px;
-    }
+  .title-numbers {
+    padding-top: 30px;
+  }
 
-    .our-attorneys {
-        height: 125vh;
-    }
-
+  .our-attorneys {
+    height: 125vh;
+  }
 }
 
 @media (max-width: 855px) {
-    nav{
-        display: none;
-    }
+  nav {
+    display: none;
+  }
 
-    #menu-icon {
-        display: block;
-    }
+  #menu-icon {
+    display: block;
+  }
 
-    .home-container {
-        background-position: 70% 50%;
-        align-items: center;
-    }
+  .home-container {
+    background-position: 70% 50%;
+    align-items: center;
+  }
 
-    .presentation-container {
-        width: 90%;
-        margin-top: 0;
-    }
+  .presentation-container {
+    width: 90%;
+    margin-top: 0;
+  }
 
-    .destaks-container {
-        padding: 0 40px;
-        top: 135vh;
-    }
+  .destaks-container {
+    padding: 0 40px;
+    top: 135vh;
+  }
 
-    .destaks-content {
-        grid-template-columns: repeat(1, 1fr);
-        row-gap: 10px;
-    }
+  .destaks-content {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 10px;
+  }
 
-    .content {
-        height: 200px;
-        row-gap: 10px;
-        padding: 0 20px;
-        border-radius: 10px;
-    }
+  .content {
+    height: 200px;
+    row-gap: 10px;
+    padding: 0 20px;
+    border-radius: 10px;
+  }
 
-    .welcome-container {
-        height: 130vh;
-    }
+  .welcome-container {
+    height: 130vh;
+  }
 
-    .signature-text {
-        width: 95%;
-        height: 30%;
-        row-gap: 30px;
-        padding: 0 10px;
-    }
+  .signature-text {
+    width: 95%;
+    height: 30%;
+    row-gap: 30px;
+    padding: 0 10px;
+  }
 
-    .attorney-img {
-        margin-left: 10px;
-        width: 90%;
-    }
+  .attorney-img {
+    margin-left: 10px;
+    width: 90%;
+  }
 
-    .our-services-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .our-services-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .testimonials-container {
-        height: 85vh;
-    }
+  .testimonials-container {
+    height: 85vh;
+  }
 
-    #card-1 {
-        display: none;
-    }
+  #card-1 {
+    display: none;
+  }
 
-    #card-2 {
-        display: none;
-    }
+  #card-2 {
+    display: none;
+  }
 
-    #card-3 {
-        margin-left: 150px;
-    }
+  #card-3 {
+    margin-left: 150px;
+  }
 
-    .form-container {
-        flex-direction: column;
-    }
+  .form-container {
+    flex-direction: column;
+  }
 
-    .form-img {
-        height: 40%;
-        width: 100%;
-    }
+  .form-img {
+    height: 40%;
+    width: 100%;
+  }
 
-    .form-content {
-        width: 100%;
-        height: 60%;
-        padding: 120px 40px 60px 40px;
-        row-gap: 30px;
-    }
+  .form-content {
+    width: 100%;
+    height: 60%;
+    padding: 120px 40px 60px 40px;
+    row-gap: 30px;
+  }
 
-    #user-message-input {
-        width: 97%;
-    }
+  #user-message-input {
+    width: 97%;
+  }
 
-    footer {
-        padding: 100px 40px 0 40px;
-        height: 90vh;
-    }
+  footer {
+    padding: 100px 40px 0 40px;
+    height: 90vh;
+  }
 
-    .footer-content {
-        flex-direction: column;
-        justify-content: center;
-    }
+  .footer-content {
+    flex-direction: column;
+    justify-content: center;
+  }
 
-    .about-text {
-        width: 100%;
-        height: 40%;
-    }
+  .about-text {
+    width: 100%;
+    height: 40%;
+  }
 
-    .theme-posts {
-        width: 100%;
-        height: 45%;
-    }
+  .theme-posts {
+    width: 100%;
+    height: 45%;
+  }
 
-    .post-content {
-        padding: 0 140px 0 10px;
-    }
+  .post-content {
+    padding: 0 140px 0 10px;
+  }
 
-    .two-blogs-imgs {
-        margin-left: 50px;
-    }
-    
-    
+  .two-blogs-imgs {
+    margin-left: 50px;
+  }
 }
 
 @media (max-width: 768px) {
-    .welcome-container {
-        height: 150vh;
-    }
+  .welcome-container {
+    height: 150vh;
+  }
 
-    .form-content {
-        height: 70%;
-    }
+  .form-content {
+    height: 70%;
+  }
 
-    .blog-news {
-        height: 160vh;
-    }
+  .blog-news {
+    height: 160vh;
+  }
 
-    .our-attorneys {
-        height: 150vh;
-    }
+  .our-attorneys {
+    height: 150vh;
+  }
 
-    .number-trust-client {
-        margin-top: 0;
-    }
+  .number-trust-client {
+    margin-top: 0;
+  }
 
-    .title-numbers {
-        padding-top: 100px;
-    }
+  .title-numbers {
+    padding-top: 100px;
+  }
 
-    .attorney-img {
-        margin-left: 0;
-    }
+  .attorney-img {
+    margin-left: 0;
+  }
 
-    #card-3 {
-        margin-left: 120px;
-        height: 700px;
-    }
+  #card-3 {
+    margin-left: 120px;
+    height: 700px;
+  }
 
-    .testimonials-container {
-        height: 100vh;
-    }
+  .testimonials-container {
+    height: 100vh;
+  }
 
-    .attorney-container {
-        width: 55%;
-    }
+  .attorney-container {
+    width: 55%;
+  }
 
-    .signature-content {
-        width: 45%;
-    }
+  .signature-content {
+    width: 45%;
+  }
 
-    footer {
-        height: 100vh;
-    }
+  footer {
+    height: 100vh;
+  }
 
-    .title-numbers {
-        padding-top: 30px;
-    }
+  .title-numbers {
+    padding-top: 30px;
+  }
 
-    .our-attorneys {
-        height: 100vh;
-    }
+  .our-attorneys {
+    height: 100vh;
+  }
 
-    .imgs-text-blogs {
-        margin-left: 0;
-    }
+  .imgs-text-blogs {
+    margin-left: 0;
+  }
 
-    .two-blogs-imgs {
-        margin-left: 50px;
-    }
-    
+  .two-blogs-imgs {
+    margin-left: 50px;
+  }
 }
 
 @media (max-width: 600px) {
-    .welcome-container {
-        height: 240vh;
-    }
+  .welcome-container {
+    height: 240vh;
+  }
 
-    .form-container {
-        height: 130vh;
-    }
+  .form-container {
+    height: 130vh;
+  }
 
-    .title-numbers {
-        padding-top: 70px;
-    }
+  .title-numbers {
+    padding-top: 70px;
+  }
 
-    .two-blogs-imgs {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        column-gap: 500px;
-        margin-left: 130px;
-    }
+  .two-blogs-imgs {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 500px;
+    margin-left: 130px;
+  }
 
-    .img-hammer-container {
-        margin-top: 200px;
-    }
+  .img-hammer-container {
+    margin-top: 200px;
+  }
 
-    .blog-news {
-        height: 270vh;
-    }
+  .blog-news {
+    height: 270vh;
+  }
 
-    .img-blog-text {
-        width: 600px;
-    }
+  .img-blog-text {
+    width: 600px;
+  }
 
-    .signature-container {
-        flex-direction: column;
-        justify-content: end;
-    }
+  .signature-container {
+    flex-direction: column;
+    justify-content: end;
+  }
 
-    .signature-content {
-        width: 95%;
-        height: 25%;
-        justify-content: end;
-    }
+  .signature-content {
+    width: 95%;
+    height: 25%;
+    justify-content: end;
+  }
 
-    .attorney-container {
-        width: 95%;
-        height: 30%;
-        justify-content: center;
-    }
+  .attorney-container {
+    width: 95%;
+    height: 30%;
+    justify-content: center;
+  }
 
-    .attorney-img {
-        width: auto;
-    }
+  .attorney-img {
+    width: auto;
+  }
 
-    .our-services-content {
-        padding: 0 10px 0 20px;
-    }
+  .our-services-content {
+    padding: 0 10px 0 20px;
+  }
 
-    .our-services-text {
-        width: 95%;
-        padding: 20px 10px 0 10px;
-    }
+  .our-services-text {
+    width: 95%;
+    padding: 20px 10px 0 10px;
+  }
 
-    #card-3 {
-        margin-left: 75px;
-        height: 700px;
-    }
+  #card-3 {
+    margin-left: 75px;
+    height: 700px;
+  }
 
-    #user-message-input {
-        width: 95%;
-    }
+  #user-message-input {
+    width: 95%;
+  }
 
-    #attorney-2 {
-        display: none;
-    }
+  #attorney-2 {
+    display: none;
+  }
 
-    .img-attorney {
-        padding: 0;
-    }
+  .img-attorney {
+    padding: 0;
+  }
 
-    .imgs-attorneys {
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-        
-    }
+  .imgs-attorneys {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
 
-    .attorney-name {
-        width: 60%;
-    }
+  .attorney-name {
+    width: 60%;
+  }
 
-    .our-attorneys {
-        height: 110vh;
-    }
-
+  .our-attorneys {
+    height: 110vh;
+  }
 }
 
 @media (max-width: 430px) {
-    header {
-        padding: 0 10px;
-    }
+  header {
+    padding: 0 10px;
+  }
 
-    .img-blog-text {
-        width: 415px;
-        margin-left: 20px;
-    }
+  .img-blog-text {
+    width: 415px;
+    margin-left: 20px;
+  }
 
-    .two-blogs-imgs {
-        margin-left: 50px;
-    }
+  .two-blogs-imgs {
+    margin-left: 50px;
+  }
 
-    .blog-news {
-        height: 270vh;
-    }
+  .blog-news {
+    height: 270vh;
+  }
 
-    .attorney-name {
-        width: 73%;
-    }
+  .attorney-name {
+    width: 73%;
+  }
 
-    #number-divider {
-        width: 30%;
-        margin-left: 70px;
-    }
+  #number-divider {
+    width: 30%;
+    margin-left: 70px;
+  }
 
-    .title-numbers {
-        padding-top: 50px;
-    }
+  .title-numbers {
+    padding-top: 50px;
+  }
 
-    .home-container {
-        background-position: 70% 50%;
-        display: flex;
-        justify-content: center;
-    }
+  .home-container {
+    background-position: 70% 50%;
+    display: flex;
+    justify-content: center;
+  }
 
-    .presentation-container {
-        width: 100%;
-        height: 60%;
-    }
+  .presentation-container {
+    width: 100%;
+    height: 60%;
+  }
 
-    .presentation-container h3 {
-        text-align: center;
-    }
+  .presentation-container h3 {
+    text-align: center;
+  }
 
-    .presentation-container h1 {
-        font-size: 3rem;
-    }
+  .presentation-container h1 {
+    font-size: 3rem;
+  }
 
-    .destaks-container {
-        padding: 0 10px;
-    }
+  .destaks-container {
+    padding: 0 10px;
+  }
 
-    .welcome-container {
-        height: 1650px;
-        align-items: end;
-    }
+  .welcome-container {
+    height: 1650px;
+    align-items: end;
+  }
 
-    .signature-content {
-        height: 600px;
-    }
+  .signature-content {
+    height: 600px;
+  }
 
-    .signature-text {
-        width: 95%;
-        height: 90%;
-        row-gap: 10px;
-        margin-bottom: 10px;
-    }
-    .attorney-container {
-        height: 400px;
-    }
+  .signature-text {
+    width: 95%;
+    height: 90%;
+    row-gap: 10px;
+    margin-bottom: 10px;
+  }
+  .attorney-container {
+    height: 400px;
+  }
 
-    .attorney-img {
-        margin-left: 10px;
-        width: 90%;
-        height: 390px;
-    }
+  .attorney-img {
+    margin-left: 10px;
+    width: 90%;
+    height: 390px;
+  }
 
-    .our-services-container {
-        height: 1550px;
-    }
+  .our-services-container {
+    height: 1550px;
+  }
 
-    .our-services-title {
-        margin-top: 120px;
-        padding-top: 20px;
-        height: 15%;
-    }
+  .our-services-title {
+    margin-top: 120px;
+    padding-top: 20px;
+    height: 15%;
+  }
 
-    .our-services-title h1 {
-        text-align: center;
-    }
+  .our-services-title h1 {
+    text-align: center;
+  }
 
-    #our-services-divider {
-        width: 30%;
-    }
+  #our-services-divider {
+    width: 30%;
+  }
 
-    .our-services-content {
-        grid-template-columns: repeat(1, 1fr);
-    }
+  .our-services-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
-    .testimonials-container {
-        height: 130vh;
-    }
+  .testimonials-container {
+    height: 130vh;
+  }
 
-    .testimonials-cards-container {
-        padding: 0 5px;
-    }
+  .testimonials-cards-container {
+    padding: 0 5px;
+  }
 
-    .testimonials-title h1 {
-        font-size: 2.5rem;
-    }
+  .testimonials-title h1 {
+    font-size: 2.5rem;
+  }
 
-    .cards {
-        margin-bottom: 20px;
-    }
+  .cards {
+    margin-bottom: 20px;
+  }
 
-    #card-3 {
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-    
-    .form-container {
-        height: 200vh;
-    }
+  #card-3 {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
 
-    .form-content {
-        padding: 120px 10px 60px 10px;
-    }
+  .form-container {
+    height: 200vh;
+  }
 
-    .form-title h2 {
-        font-size: 1rem;
-    }
+  .form-content {
+    padding: 120px 10px 60px 10px;
+  }
 
-    .form-title h1 {
-        font-size: 2rem;
-    }
+  .form-title h2 {
+    font-size: 1rem;
+  }
 
-    footer {
-        padding: 50px 10px 0 10px;
-        height: 150vh;
-    }
+  .form-title h1 {
+    font-size: 2rem;
+  }
 
-    .footer-content {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  footer {
+    padding: 50px 10px 0 10px;
+    height: 150vh;
+  }
 
-    .about-text {
-        width: 100%;
-        height: 40%;
-        row-gap: 20px;
-    }
+  .footer-content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .theme-posts {
-        width: 100%;
-        height: 45%;
-    }
+  .about-text {
+    width: 100%;
+    height: 40%;
+    row-gap: 20px;
+  }
 
-    .post-content {
-        padding: 0 10px;
-    }
+  .theme-posts {
+    width: 100%;
+    height: 45%;
+  }
 
-    #user-message-input {
-        width: 94%;
-    }
+  .post-content {
+    padding: 0 10px;
+  }
 
-    .background-rgba {
-       height: 100vh;
-    }
-    .client-numbers {
-        height: 100vh;
-    }
-    
-    .trust-number-container {
-        padding: 0 0 0 0;
-    }
+  #user-message-input {
+    width: 94%;
+  }
 
-    .choose-us {
-        font-weight: 300;
-        font-size: 2rem;
-    }
-    
+  .background-rgba {
+    height: 100vh;
+  }
+  .client-numbers {
+    height: 100vh;
+  }
+
+  .trust-number-container {
+    padding: 0 0 0 0;
+  }
+
+  .choose-us {
+    font-weight: 300;
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 414px) {
-    #card-3 {
-        margin-left: 50px;
-        margin-right: 40px;
-    }
+  #card-3 {
+    margin-left: 50px;
+    margin-right: 40px;
+  }
 
-    #our-blog-news {
-        font-size: 2.5rem;
-    }
+  #our-blog-news {
+    font-size: 2.5rem;
+  }
 
-    .img-blog-text {
-        margin-left: 0;
-    }
+  .img-blog-text {
+    margin-left: 0;
+  }
 
-    .blog-news {
-        height: 350vh;
-    }
+  .blog-news {
+    height: 350vh;
+  }
 
-    .our-attorneys {
-        height: 140vh;
-    }
+  .our-attorneys {
+    height: 140vh;
+  }
 
-    #user-message-input {
-        width: 94%;
-    }
+  #user-message-input {
+    width: 94%;
+  }
 
-    .trust-number-container {
-        height: auto;
-        padding: 0 0 0 0;
-    }
-
+  .trust-number-container {
+    height: auto;
+    padding: 0 0 0 0;
+  }
 }
 
 @media (max-width: 390px) {
-    #card-3 {
-        margin-left: 40px;
-        margin-right: 35px;
-    }
+  #card-3 {
+    margin-left: 40px;
+    margin-right: 35px;
+  }
 
-    #user-message-input {
-        width: 93%;
-    }
-    
+  #user-message-input {
+    width: 93%;
+  }
 }
 
 @media (max-width: 375px) {
-    #card-3 {
-        margin-left: 35px;
-        margin-right: 30px;
-    }
+  #card-3 {
+    margin-left: 35px;
+    margin-right: 30px;
+  }
 
-    .blog-news {
-        height: 360vh;
-    }
+  .blog-news {
+    height: 360vh;
+  }
 
-    .our-attorneys {
-        height: 140vh;
-    }
+  .our-attorneys {
+    height: 140vh;
+  }
 
-    #user-message-input {
-        width: 93%;
-    }
+  #user-message-input {
+    width: 93%;
+  }
 
-    .choose-us {
-        font-size: 2.5rem;
-    }
+  .choose-us {
+    font-size: 2.5rem;
+  }
 
-    #number-divider {
-        margin-left: 100px;
-    }
-    
+  #number-divider {
+    margin-left: 100px;
+  }
 }
 
 @media (max-width: 360px) {
-    #our-blog-news {
-        font-size: 2rem;
-    }
+  #our-blog-news {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 344px) {
-    #card-3 {
-        margin-left: 30px;
-        margin-right: 20px;
-    }
+  #card-3 {
+    margin-left: 30px;
+    margin-right: 20px;
+  }
 
-    #user-message-input {
-        width: 92%;
-    }
-    
+  #user-message-input {
+    width: 92%;
+  }
 }
 
 @media (max-height: 670px) {
-    #card-3 {
-        height: 600px;
-    }
+  #card-3 {
+    height: 600px;
+  }
 
-    #number-none {
-        display: none;
-    }
+  #number-none {
+    display: none;
+  }
 
-    .our-attorneys {
-        height: 155vh;
-    }
+  .our-attorneys {
+    height: 155vh;
+  }
 }
-
