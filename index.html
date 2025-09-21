@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Justly</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
     <script>
   document.addEventListener("DOMContentLoaded", function () {
     const elementos = document.querySelectorAll("body *");
@@ -24,23 +25,27 @@
 
 </head>
 <body>
-    <header>
+    <header class="navegacao">
+    <nav class="navegacao">
         <a href="./index.html">
             <div class="logo">
                 <img class="logo-img" src="./assets/logo.png" alt="logo-img" />
                 <span class="logo-text">Justly</span>
             </div>
         </a>
-        <nav>
-            <ul>
-                <a href="#modal">Home</a>
-                <a href="#pratice-page">Pratice Areas</a>
-                <a href="#attorney-page">Attorneys</a>
-                <a href="#formulario-main">Contact Us</a>
-                <a href="#blog-pages">Pages</a>
-            </ul>
-        </nav>
-        <i class="fa-solid fa-bars" id="menu-icon"></i>
+
+    <button id="mobile-menu-button" class="mobile-menu-icon" aria-label="Abrir menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+        <ul class="menu">
+            <li><a href="#modal" class="menu-link">Home</a></li>
+        <li><a href="#pratice-page" class="menu-link">Pratice Areas</a></li>
+        <li><a href="#attorney-page" class="menu-link">Attorneys</a></li>
+        <li><a href="#formulario-main" class="menu-link">Contact Us</a></li>
+        <li><a href="#blog-pages" class="menu-link">Pages</a></li>
+        </ul>
+    </nav>
+
     </header>
     <div class="modal" id="modal"></div>
     <div class="home-container">
@@ -224,6 +229,8 @@
                 <h2 class="testimonial-name">Shanna Hicks</h2>
                 <span class="testimonial-profession">Busineesman</span>
             </div>
+            <button class="carousel-btn prev">‹</button>
+            <button class="carousel-btn next">›</button>
         </div>
 
 
@@ -297,41 +304,45 @@
         </div>
     </section>
 
-    <section class="our-attorneys" id="attorney-page">
-        <div class="attorney-text">
-            <h5 class="special-heading">
-                <span class="lawyer-text">LAWYERS TEAM</span>
-            </h5>
-            <h3 class="special-heading">
-                <span class="choose-us">Our Attorneys
-                </span>
-                <div class="divider" id="number-divider"></div>
-            </h3>
-            <div class="divider-lg-60"></div>
-        </div>
+<section class="our-attorneys" class="carousel" id="attorney-page">
+    <div class="attorney-text">
+        <h5 class="special-heading">
+            <span class="lawyer-text">LAWYERS TEAM</span>
+        </h5>
+        <h3 class="special-heading">
+            <span class="choose-us">Our Attorneys
+            </span>
+            <div class="divider" id="number-divider"></div>
+        </h3>
+        <div class="divider-lg-60"></div>
+    </div>
+    <div class="carousel-track-container">
+        <div class="carousel-track">
 
-        <div class="attorney-img-container">
-            <div class="imgs-attorneys">
-                <div class="img-attorney" id="attorney-1">
-                    <div class="attorney-name">
-                        <p class="name-lawyer">Richard Person</p>
+            <div class="attorney-img-container">
+                <div class="imgs-attorneys">
+                    <div class="img-attorney" id="attorney-1">
+                        <div class="attorney-name">
+                            <p class="name-lawyer">Richard Person</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="img-attorney" id="attorney-2">
-                    <div class="attorney-name">
-                        <p class="name-lawyer">Thomas Smith</p>
+                    <div class="img-attorney" id="attorney-2">
+                        <div class="attorney-name">
+                            <p class="name-lawyer">Thomas Smith</p>
+                        </div>
                     </div>
-                </div>
-            
-                <div class="img-attorney" id="attorney-3">
-                    <div class="attorney-name">
-                        <p class="name-lawyer">Brian Anthony</p>
+                
+                    <div class="img-attorney" id="attorney-3">
+                        <div class="attorney-name">
+                            <p class="name-lawyer">Brian Anthony</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
     <section class="form-container" id="formulario-main">
@@ -494,62 +505,15 @@
             </div>
 
 
-            <div class="theme-posts">
-                <h2>THEME POSTS</h2>
-
-
-                <div class="posts" id="post-1">
-                    <img src="./assets/post-1.jpg" alt="post-img" class="post-img">
-                    <div class="post-content">
-                        <p>
-                            Judicial Review of New Laws in Employment Law
-                        </p>
-                        <div class="post-date">
-                            <i class="fa-regular fa-clock" id="clock-icon"></i>
-                            <span>February 11, 2025</span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="posts" id="post-2">
-                    <img src="./assets/post-2.jpg" alt="post-img" class="post-img">
-                    <div class="post-content">
-                        <p>
-                            Speak Directly With An Insurer in Case of Car Accidents
-                        </p>
-                        <div class="post-date">
-                            <i class="fa-regular fa-clock" id="clock-icon"></i>
-                            <span>February 11, 2025</span>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="posts" id="post-3">
-                    <img src="./assets/post-3.jpg" alt="post-img" class="post-img">
-                    <div class="post-content">
-                        <p>
-                            Listen to your Lawyers – They Will give You Advices
-                        </p>
-                        <div class="post-date">
-                            <i class="fa-regular fa-clock" id="clock-icon"></i>
-                            <span>February 11, 2025</span>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-        </div>
+            
     </footer>
     <div class="copyright">
-        <span>&copy; JUSTLY 2025<br> 
+        <span class="colorchange">&copy; JUSTLY 2025<br> 
         REPLICADO POR: JOÂO PEDRO</span>
     </div>
-
+    
     <script src="https://kit.fontawesome.com/e436e4ec68.js" crossorigin="anonymous"></script>
 </body>
+<script src="script.js"></script>
 
 </html>

@@ -44,11 +44,15 @@ header {
   height: 100px;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 0 240px;
-  background-color: #272d3467;
+  padding-top: 10px;
+  background-color: rgba(11, 11, 11, 0.8);
   z-index: 1;
+}
+
+.mobile-menu-icon {
+  display: none;
 }
 
 .logo {
@@ -72,15 +76,23 @@ header {
 
 
 nav {
-  width: 60%;
+  width: 100%;
+  
 }
 
 ul {
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* alinha no topo */
+  margin-top: 10px;        /* novo */
   justify-content: space-between;
+  top: 30px !important; /* distância de 50px do topo */
+   position: absolute; /* ou fixed, dependendo do efeito desejado */
+
+
 }
+
+
 
 a {
   font-size: 1.1rem;
@@ -127,6 +139,12 @@ a:hover {
     background-position: 0% center;
   }
 }
+.navegacao {
+  height: 100px;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: rgba(11, 11, 11, 0.8)
+}
 
 
 
@@ -143,6 +161,8 @@ a:hover {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+
 
 .home-container {
   background-image: url("./assets/471bec69-c827-445c-935e-de08a1f712d6.jpg");
@@ -813,18 +833,45 @@ background: linear-gradient(120deg,
 .testimonials-title h1 {
   margin: 0;
   font-size: 3.5rem;
-  color: #c8b050;
+  background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 3s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
+  cursor: pointer;
+  transition: 1.2s;
 }
 
 .testimonials-cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
   row-gap: 30px;
   column-gap: 50px;
-  width: 100%;
+  width: 50%;
   height: 600px;
   padding: 0 120px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
 }
+
 
 .cards {
   width: 100%;
@@ -839,6 +886,9 @@ background: linear-gradient(120deg,
   cursor: pointer;
   transition: 1s;
   border-radius: 20px;
+  display: none;
+  text-align: center;
+
 }
 
 .testimonial-img {
@@ -847,13 +897,67 @@ background: linear-gradient(120deg,
   border-radius: 50%;
   background-size: cover;
   background-position: 50% 50%;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente (se tiver altura definida) */
+  margin: auto;
+  margin-top: 70px;    
+
 }
 
 #testimony-icon {
   font-size: 3rem;
-  color: #c8b050;
+  background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 3s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
+  cursor: pointer;
+  transition: 1.2s;
   opacity: 0, 5;
 }
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.3);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+
 
 .testimony {
   text-align: center;
@@ -861,17 +965,50 @@ background: linear-gradient(120deg,
   font-size: 1.2rem;
   font-style: italic;
   font-family: "Poppins", sans-serif;
+   margin: 20px 0;       /* Espaço acima e abaixo do texto do depoimento */
+  line-height: 1.6;     /* Altura da linha para facilitar a leitura */
 }
+
+
+
 
 .testimonial-name {
   font-size: 1, 5rem;
   color: #2e353d;
+  margin-top: 15px;
 }
 
 .testimonial-profession {
   font-size: 1, 3rem;
-  color: #c8b050;
+   background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 3s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
+  cursor: pointer;
+  transition: 1.2s;
   font-family: "Poppins", sans-serif;
+  display: block;       /* Garante que fique em uma nova linha */
+  margin-top: 5px;  
 }
 
 #testimonial-1 {
@@ -901,7 +1038,18 @@ background: linear-gradient(120deg,
 }
 
 .form-content {
-  background-color: #323a43;
+  background: linear-gradient(120deg,
+    #000000 0%,       /* preto puro */
+    #2e353d 30%,      /* cinza escuro */
+    #323a43 50%,      /* cinza médio */
+    #000000 80%       /* volta para preto */
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  padding: 11px 30px;
+  width: 100%;
   width: 50%;
   height: 100%;
   padding: 120px 80px 60px 80px;
@@ -928,8 +1076,36 @@ background: linear-gradient(120deg,
 .form-title h1 {
   margin: 0;
   font-size: 3.5rem;
-  color: #c8b050;
+  background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 3s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
+  cursor: pointer;
+  transition: 1.2s;
+  display: block;       /* Garante que fique em uma nova linha */
+  margin-top: 5px;  
 }
+
 
 #form-divider {
   width: 15%;
@@ -1043,6 +1219,7 @@ background: linear-gradient(120deg,
   background-color: rgba(205, 186, 109, 0.6);
   transition: all 0.5s;
   transform: translate(0, 0);
+  border-radius: 80px;
 }
 
 .submit-button:hover {
@@ -1052,8 +1229,19 @@ background: linear-gradient(120deg,
 
 footer {
   width: 100%;
-  height: 90vh;
-  background-color: #323a43;
+  height: 80vh;
+    background: linear-gradient(120deg,
+    #000000 0%,       /* preto puro */
+    #2e353d 30%,      /* cinza escuro */
+    #323a43 50%,      /* cinza médio */
+    #000000 80%       /* volta para preto */
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
+  padding: 11px 30px;
+  width: 100%;
   padding: 220px 140px 80px 140px;
 }
 
@@ -1064,39 +1252,107 @@ footer {
   justify-content: space-between;
 }
 
+.navegacao {
+  top: 0;
+  position: fixed;
+  background-color: rgba(11, 11, 11, 0.8);
+  width: 100%;
+  z-index: 100;
+  padding: 1.5rem;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: var(--claro);
+  font-weight: 500;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.menu-link::after {
+  content: "";
+  height: 2px;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+  transition: width 0.45s ease;
+}
+
+.menu-link:hover::after {
+  width: 100%;
+}
+
+
+
+
 .about-text {
-  width: 40%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  row-gap: 70px;
+  align-items: center;       /* Centraliza horizontalmente */
+  justify-content: flex-start; /* antes era center */
+  padding: 40px 20px 20px;     /* reduzi o padding para subir o conteúdo */
+  gap: 25px;                   /* espaço entre título, texto e ícones */
+  min-height: 60vh;    /* Centraliza verticalmente */
+      /* Centraliza o texto */       /* Espaço interno */    
 }
 
 .about-text h2 {
-  color: #c8b050;
-  margin: 0;
-  font-size: 1rem;
-  letter-spacing: 6px;
+   background: linear-gradient(
+    90deg,
+    #c39a58,
+    #fff3d5,
+    #c39a58
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: brilho-dourado 3s linear infinite;
+  font-size: 4rem;
+  letter-spacing: 5px;
   font-weight: 700;
+  margin: 0;
+
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;    /* Centraliza horizontalmente */
+  margin-top: 10px;
+
 }
 
 .about-text p {
   font-family: "Poppins", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.8rem;          /* um pouco menor para melhor leitura */
   font-weight: 500;
   color: #fff;
   line-height: 2;
+  max-width: 900px;    
 }
 
 .social-media {
   display: flex;
-  column-gap: 20px;
+  justify-content: center;    /* Centraliza os ícones */
+  gap: 25px;    
 }
 
 .social-media i {
-  font-size: 1.3rem;
+  font-size: 2.5rem;
   color: #fff;
   cursor: pointer;
+  transition: color 0.3s ease;
+
 }
 
 #facebook-icon:hover {
@@ -1258,13 +1514,39 @@ footer {
 .choose-us {
   font-size: 3.5rem;
   font-weight: 500;
-  color: #cdba6d;
   z-index: 2;
+   background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 3s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
+  cursor: pointer;
+  transition: 1.2s;
+  opacity: 0, 5;
 }
 
 #number-divider {
-  margin-left: 130px;
-  width: 25%;
+  margin-left: 40px;
+  width: 80%;
   margin-top: 30px;
   border-top: 2px solid #c8b050;
 }
@@ -1286,9 +1568,18 @@ footer {
 
 #trust-text-divider {
   width: 2px;
-  background-color: #c8b050;
   height: 150px;
   margin-top: 100px;
+  background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 3s;
+
 }
 
 .counter-text {
@@ -1303,13 +1594,45 @@ footer {
 }
 
 .number-trust-client {
-  color: #c8b050;
+   background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 3s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
+  cursor: pointer;
+  transition: 1.2s;
+  opacity: 0, 5;
   font-weight: 300;
   font-size: 60px;
   margin-top: 80px;
   margin-bottom: 0.25em;
   text-align: center;
+ 
 }
+
+
+
+
+
 
 .our-attorneys {
   height: 110vh;
@@ -1341,8 +1664,8 @@ footer {
 .imgs-attorneys {
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  transition: transform 0.3s ease-in-out;
 }
 
 #attorney-1 {
@@ -1378,11 +1701,21 @@ footer {
 }
 
 .attorney-name {
-  background-color: #323a43;
+  background: linear-gradient(120deg,
+    #000000 0%,       /* preto puro */
+    #2e353d 30%,      /* cinza escuro */
+    #323a43 50%,      /* cinza médio */
+    #000000 80%       /* volta para preto */
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease-in-out infinite;
+  display: flex;
+  flex-direction: column;
   padding: 11px 30px;
   width: 100%;
   margin-top: 600px;
-  height: 9%;
+  height: 60px;
+  
 }
 
 .name-lawyer {
@@ -1397,8 +1730,39 @@ footer {
 
 .name-lawyer:hover {
   transition: 1s;
-  color: #c8b050;
+     background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 3s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
+  cursor: pointer;
+  transition: 1.2s;
+  opacity: 0, 5;
+  font-weight: 300;
+  margin-bottom: 0.25em;
+  text-align: center;
+ 
 }
+
 
 .blog-news {
   height: 150vh;
@@ -1685,9 +2049,6 @@ footer {
     margin-top: 10px;
   }
 
-  .our-attorneys {
-    height: 130vh;
-  }
 }
 
 @media (max-width: 1440px) {
@@ -1733,9 +2094,6 @@ footer {
     width: 95%;
   }
 
-  footer {
-    padding: 220px 60px 80px 60px;
-  }
 
   .imgs-text-blogs {
     margin-left: 80px;
@@ -1821,7 +2179,7 @@ footer {
   }
 
   .presentation-container button {
-    margin-top: 1px;
+    margin-top: 150px;
   }
 
   .our-services-content {
@@ -1841,19 +2199,7 @@ footer {
     margin-top: 10px;
   }
 
-  .attorney-img {
-    height: 500px;
-  }
 
-  #square-3 {
-    padding: 0 40px;
-  }
-
-  .testimonials-cards-container {
-    padding: 0 80px;
-    height: 10px;
-    margin-bottom: 100rem;
-  }
 
   .form-content {
     padding: 120px 20px 60px 20px;
@@ -1892,9 +2238,6 @@ footer {
     margin-top: 10px;
   }
 
-  footer {
-    padding: 80px 30px 80px 30px;
-  }
 
   .theme-posts {
     width: 50%;
@@ -1915,10 +2258,18 @@ footer {
     position: relative;
     justify-content: space-between;
   }
+  
+  .testimonials-cards-container {
+    width: 100%;
+  }
 
-  #attorney-3 {
+  #card-3 {
     display: none;
   }
+
+.cards {
+  width: 100%;
+}
 
   .attorney-img-container {
     display: flex;
@@ -2023,17 +2374,8 @@ footer {
     height: 85vh;
   }
 
-  #card-1 {
-    display: none;
-  }
+ 
 
-  #card-2 {
-    display: none;
-  }
-
-  #card-3 {
-    margin-left: 150px;
-  }
 
   .form-container {
     flex-direction: column;
@@ -2119,6 +2461,25 @@ footer {
 }
 
 @media (max-width: 855px) {
+
+  .copyright {
+    background-color: #000;
+  }
+
+  .presentation-container buton {
+    margin-top: 150px;
+  }
+
+  .colorchange {
+    color: white;
+  }
+
+  footer {
+    display: none;
+  }
+
+  .footer-content {display: none;}
+
   nav {
     display: none;
   }
@@ -2178,17 +2539,7 @@ footer {
     height: 85vh;
   }
 
-  #card-1 {
-    display: none;
-  }
 
-  #card-2 {
-    display: none;
-  }
-
-  #card-3 {
-    margin-left: 150px;
-  }
 
   .form-container {
     flex-direction: column;
@@ -2210,10 +2561,6 @@ footer {
     width: 97%;
   }
 
-  footer {
-    padding: 100px 40px 0 40px;
-    height: 90vh;
-  }
 
   .footer-content {
     flex-direction: column;
@@ -2240,6 +2587,58 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+  .logo {
+    display: none;
+  }
+
+    .navegacao {
+    display: flex;
+    justify-content: flex-end; /* Alinha o ícone à direita */
+    align-items: center;
+    padding: 1rem;
+  }
+
+  /* Esconde o menu de links original */
+  .menu {
+    display: none; /* O menu de links some */
+
+    /* Estilo para quando o menu for aberto */
+    position: absolute;
+    top: 100%; /* Aparece logo abaixo da barra de navegação */
+    left: 0;
+    width: 100%;
+    background-color: rgba(11, 11, 11, 0.95); /* Fundo um pouco mais sólido */
+    flex-direction: column; /* Organiza os links verticalmente */
+    text-align: center;
+    gap: 0;
+  }
+
+  /* Estilo dos links dentro do menu mobile */
+  .menu li {
+    width: 100%;
+    border-top: 1px solid var(--vidro);
+  }
+
+  .menu li a {
+    padding: 1.5rem 0;
+    display: block; /* Faz o link ocupar toda a largura */
+  }
+
+  /* Classe que o JavaScript vai adicionar para MOSTRAR o menu */
+  .menu.active {
+    display: flex; /* O menu reaparece quando a classe 'active' é adicionada */
+  }
+
+  /* Mostra o botão do menu (ícone hambúrguer) */
+  .mobile-menu-icon {
+    display: block; /* O botão aparece */
+    background: none;
+    border: none;
+    color: var(--claro);
+    font-size: 2rem; /* Tamanho do ícone */
+    cursor: pointer;
+  }
   .welcome-container {
     height: 150vh;
   }
@@ -2268,10 +2667,6 @@ footer {
     margin-left: 0;
   }
 
-  #card-3 {
-    margin-left: 120px;
-    height: 700px;
-  }
 
   .testimonials-container {
     height: 100vh;
@@ -2285,25 +2680,6 @@ footer {
     width: 45%;
   }
 
-  footer {
-    height: 100vh;
-  }
-
-  .title-numbers {
-    padding-top: 30px;
-  }
-
-  .our-attorneys {
-    height: 100vh;
-  }
-
-  .imgs-text-blogs {
-    margin-left: 0;
-  }
-
-  .two-blogs-imgs {
-    margin-left: 50px;
-  }
 }
 
 @media (max-width: 600px) {
@@ -2355,9 +2731,6 @@ footer {
     justify-content: center;
   }
 
-  .attorney-img {
-    width: auto;
-  }
 
   .our-services-content {
     padding: 0 10px 0 20px;
@@ -2368,36 +2741,15 @@ footer {
     padding: 20px 10px 0 10px;
   }
 
-  #card-3 {
-    margin-left: 75px;
-    height: 700px;
-  }
+
 
   #user-message-input {
     width: 95%;
   }
 
-  #attorney-2 {
-    display: none;
-  }
 
-  .img-attorney {
-    padding: 0;
-  }
 
-  .imgs-attorneys {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-  }
-
-  .attorney-name {
-    width: 60%;
-  }
-
-  .our-attorneys {
-    height: 110vh;
-  }
+ 
 }
 
 @media (max-width: 430px) {
@@ -2517,10 +2869,7 @@ footer {
     margin-bottom: 20px;
   }
 
-  #card-3 {
-    margin-left: 50px;
-    margin-right: 50px;
-  }
+  
 
   .form-container {
     height: 200vh;
@@ -2586,11 +2935,7 @@ footer {
 }
 
 @media (max-width: 414px) {
-  #card-3 {
-    margin-left: 50px;
-    margin-right: 40px;
-  }
-
+ 
   #our-blog-news {
     font-size: 2.5rem;
   }
@@ -2618,10 +2963,7 @@ footer {
 }
 
 @media (max-width: 390px) {
-  #card-3 {
-    margin-left: 40px;
-    margin-right: 35px;
-  }
+
 
   #user-message-input {
     width: 93%;
@@ -2629,10 +2971,6 @@ footer {
 }
 
 @media (max-width: 375px) {
-  #card-3 {
-    margin-left: 35px;
-    margin-right: 30px;
-  }
 
   .blog-news {
     height: 360vh;
@@ -2662,10 +3000,7 @@ footer {
 }
 
 @media (max-width: 344px) {
-  #card-3 {
-    margin-left: 30px;
-    margin-right: 20px;
-  }
+
 
   #user-message-input {
     width: 92%;
@@ -2673,9 +3008,7 @@ footer {
 }
 
 @media (max-height: 670px) {
-  #card-3 {
-    height: 600px;
-  }
+ }
 
   #number-none {
     display: none;
@@ -2684,4 +3017,4 @@ footer {
   .our-attorneys {
     height: 155vh;
   }
-}
+
