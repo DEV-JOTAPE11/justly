@@ -9,10 +9,39 @@
   font-family: "Playfair Display", sans-serif;
 }
 
+:root {
+  --primaria: #d4af37; /* Dourado Clássico: para títulos, botões e destaques. */
+  --secundaria: #f0e68c; /* Dourado Claro (Khaki): para hovers e detalhes sutis. */
+  --escuro: #121212; /* Quase Preto: cor de fundo principal, suave para os olhos. */
+  --maisescuro: #0a0a0a; /* Preto Profundo: para o rodapé ou header, criando contraste. */
+  --claro: #eaeaea; /* Branco Suave: cor principal do texto e parágrafos. */
+  --vidro: rgba(255, 255, 255, 0.05);
+}
+
+  body * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  /* Quando visível */
+  .visivel {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
 header {
   position: fixed;
   top: 0;
-  height: 130px;
+  height: 100px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -41,9 +70,6 @@ header {
   font-size: 2rem;
 }
 
-.logo-text:hover {
-  color: #cdba6d;
-}
 
 nav {
   width: 60%;
@@ -63,19 +89,46 @@ a {
 }
 
 a:hover {
-  color: #cdba6d;
   cursor: pointer;
-  transition: ease 0.5s;
+  transition: ease 5s;
+  background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 5s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
 }
 
-#search-icon {
-  color: #fff;
-  cursor: pointer;
+@keyframes brilho-dourado {
+  from {
+    /* Começa com a posição do fundo na esquerda */
+    background-position: 200% center;
+  }
+  to {
+    /* Termina com a posição do fundo na direita */
+    background-position: 0% center;
+  }
 }
 
-#search-icon:hover {
-  color: #cdba6d;
-}
+
 
 #menu-icon {
   display: none;
@@ -92,7 +145,7 @@ a:hover {
 }
 
 .home-container {
-  background-image: url("./assets/background.jpg");
+  background-image: url("./assets/471bec69-c827-445c-935e-de08a1f712d6.jpg");
   background-size: cover;
   background-position: 50% 50%;
   width: 100%;
@@ -118,15 +171,41 @@ a:hover {
   letter-spacing: 10px;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
+  
 }
 
 .presentation-container h1 {
+  transition: ease 5s;
   font-size: 5rem;
   text-align: center;
 }
 
 .presentation-container span {
-  color: #cdba6d;
+  background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 1s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
+
 }
 
 .presentation-container p {
@@ -134,25 +213,40 @@ a:hover {
   font-size: 1.3rem;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
+  transition: ease 3s;
 }
 
-.presentation-container button {
-  width: 150px;
-  height: 50px;
-  background-color: #cdba6d;
-  color: black;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  border: 2px solid #c8b050;
-  font-size: 1rem;
+/* From Uiverse.io by TimTrayler */ 
+.buton {
+  margin-top: 70px;
+  --hover-shadows: 16px 16px 33px #121212, -16px -16px 33px #303030;
+  --accent: #c8b050;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 1.1em;
+  background-color: #212121;
   cursor: pointer;
-  margin-top: 50px;
+  color: white;
+  padding: 1em 2em;
+  transition: box-shadow ease-in-out 0.3s, background-color ease-in-out 0.1s,
+    letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
+    width: 20rem;
+    height: 3rem;
+ 
 }
 
-.presentation-container button:hover {
-  background-color: transparent;
-  color: #fff;
+.buton:hover {
+  box-shadow: var(--hover-shadows);
 }
+
+.buton:active {
+  box-shadow: var(--hover-shadows), var(--accent) 0px 0px 30px 5px;
+  background-color: var(--accent);
+  transform: scale(0.95);
+}
+
+
 
 .destaks-container {
   width: 100%;
@@ -181,13 +275,66 @@ a:hover {
 }
 
 #square-1 {
-  background-color: #353e47;
+
+background: linear-gradient(120deg,
+    #000000 0%,       /* preto puro */
+    #2e353d 30%,      /* cinza escuro */
+    #323a43 50%,      /* cinza médio */
+    #000000 80%       /* volta para preto */
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease-in-out infinite;
 }
 
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+/* Acessibilidade: reduz o movimento quando o usuário prefere menos animação */
+@media (prefers-reduced-motion: reduce) {
+  .moving-gradient {
+    animation: none;
+    background-position: 50% 50%;
+  }
+}
+
+
+
+
+
 #square-1 i {
-  color: #c8b050;
+   background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 0.5s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
+
   font-size: 3rem;
 }
+
 
 .destaks-span {
   font-size: 1.5rem;
@@ -202,24 +349,90 @@ a:hover {
 }
 
 #destaks-span-gold {
-  color: #c8b050;
+  font-size: 1.5rem;
 }
 
 #square-2 {
-  background-color: #323a43;
+  background: linear-gradient(120deg,
+    #000000 0%,       /* preto puro */
+    #2e353d 30%,      /* cinza escuro */
+    #323a43 50%,      /* cinza médio */
+    #000000 80%       /* volta para preto */
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease-in-out infinite;
 }
 
 #gavel-icon {
   font-size: 3rem;
+    background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 0.5s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
+
+  font-size: 3rem;
 }
 
+
+
 #square-3 {
-  background-color: #2e353d;
   padding: 0 100px;
+  background: linear-gradient(120deg,
+    #000000 0%,       /* preto puro */
+    #2e353d 30%,      /* cinza escuro */
+    #323a43 50%,      /* cinza médio */
+    #000000 80%       /* volta para preto */
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease-in-out infinite;
 }
 
 #square-3 i {
-  color: #c8b050;
+    background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 0.5s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
+
   font-size: 3rem;
 }
 
@@ -232,7 +445,11 @@ a:hover {
 }
 
 #divider-white {
-  border-top: 3px solid #fff;
+  border: none;
+  border-top: 3px solid #c8b050;
+  border-radius: 20px;
+  margin: 10px 0;
+  width: 100%;
 }
 
 .welcome-container {
@@ -272,12 +489,36 @@ a:hover {
 
 .signature-title h1 {
   font-size: 2.5rem;
-  color: #cdba6d;
+   background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 3s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
 }
 
 .signature-text h5 {
   font-weight: 300;
   letter-spacing: 3px;
+  transition: ease 3s;
 }
 
 .signature-text span {
@@ -296,27 +537,43 @@ a:hover {
   justify-content: space-between;
 }
 
-.signature-button-container button {
-  width: 100%;
-  height: 50px;
-  background-color: #cdba6d;
-  color: #000;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  border: 2px solid #c8b050;
-  font-size: 1 rem;
+
+
+.botao-form {
+  color: var(--claro);
+  background: linear-gradient(90deg, #c39a58, #fff3d5, #c39a58);
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  width: 17rem;
+  height: 45px;
+  transition: all 0.5 ease;
+  margin-top: 20px;
 }
 
-.signature-button-container button:hover {
-  background-color: transparent;
+.botao-form:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+  color: white;
 }
+
+
 
 .signature-button-container img {
   width: 100%;
   height: auto;
 }
 
+@keyframes zoomSuave {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
 .attorney-container {
   width: 50%;
   height: 100%;
@@ -331,7 +588,14 @@ a:hover {
 .our-services-container {
   width: 100%;
   height: 100vh;
-  background-color: #323a43;
+  background: linear-gradient(120deg,
+    #000000 0%,       /* preto puro */
+    #2e353d 30%,      /* cinza escuro */
+    #323a43 50%,      /* cinza médio */
+    #000000 80%       /* volta para preto */
+  );
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease-in-out infinite;
   display: flex;
   flex-direction: column;
 }
@@ -357,8 +621,32 @@ a:hover {
 .our-services-title h1 {
   margin: 0;
   font-size: 3.5rem;
-  color: #c8b050;
+   background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 3s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
 }
+
 
 .our-services-content {
   width: 100%;
@@ -370,8 +658,34 @@ a:hover {
 }
 
 #our-services-divider {
-  width: 5%;
+  width: 15%;
+   background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 3s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
 }
+  
+
 
 .our-services-square {
   display: flex;
@@ -393,9 +707,33 @@ a:hover {
 }
 
 #service-icon {
-  color: #c8b050;
+   background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 3s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
   font-size: 3rem;
 }
+
 
 #service-icon:hover {
   color: #fff;
@@ -411,10 +749,34 @@ a:hover {
 }
 
 .services-title:hover {
-  color: #c8b050;
+   background: linear-gradient(
+    90deg,
+    /* Direção do gradiente */ #c39a58,
+    /* Tom dourado mais escuro */ #fff3d5,
+    /* Tom de brilho claro (quase branco) */ #c39a58
+      /* Repete o tom escuro para um loop suave */
+      
+  );
+  transition: ease 3s;
+
+  /* 2. Faz o fundo ser 2x maior que o texto para ter espaço para se mover */
+  background-size: 200% auto;
+
+  /* 3. Recorta o fundo para aparecer apenas onde há texto */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 4. Deixa a cor do texto transparente para que o fundo apareça */
+  /* Para navegadores mais antigos e WebKit */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Para navegadores modernos */
+
+  /* 5. Aplica a animação */
+  animation: brilho-dourado 3s linear infinite;
   cursor: pointer;
   transition: 1.2s;
 }
+
 
 .service-description {
   color: #fff;
@@ -843,11 +1205,15 @@ footer {
   font-size: 0.9rem;
 }
 
+.visible {
+  position: relative;
+}
+
 .background-rgba {
   width: 100%;
   height: 80vh;
   position: absolute;
-  opacity: 0.8;
+  opacity: 0.7;
   background-color: #323a43;
 }
 .client-numbers {
@@ -856,6 +1222,8 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  position: relative;
+  z-index: 0; /* fica no fundo */
 }
 
 .special-heading {
@@ -864,6 +1232,7 @@ footer {
   margin-bottom: 0;
   margin-top: 0;
   font-weight: 400;
+  z-index: 2;
 }
 
 .title-numbers {
@@ -883,12 +1252,14 @@ footer {
   letter-spacing: 6px;
   font-weight: 400;
   color: #fff;
+
 }
 
 .choose-us {
   font-size: 3.5rem;
   font-weight: 500;
   color: #cdba6d;
+  z-index: 2;
 }
 
 #number-divider {

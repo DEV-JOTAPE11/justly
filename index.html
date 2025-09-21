@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Justly</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const elementos = document.querySelectorAll("body *");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visivel");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    elementos.forEach(el => observer.observe(el));
+  });
+</script>
+
+
 </head>
 <body>
     <header>
@@ -17,10 +34,10 @@
         <nav>
             <ul>
                 <a href="#modal">Home</a>
-                <a href="#blog-pages">Pages</a>
-                <a href="#attorney-page">Attorneys</a>
                 <a href="#pratice-page">Pratice Areas</a>
+                <a href="#attorney-page">Attorneys</a>
                 <a href="#formulario-main">Contact Us</a>
+                <a href="#blog-pages">Pages</a>
             </ul>
         </nav>
         <i class="fa-solid fa-bars" id="menu-icon"></i>
@@ -31,7 +48,8 @@
             <h3>A Better Legal System</h3>
             <h1>Welcome to <span>Justly <br>Best</span> Lawyer Firm</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt consequatur ab quam eum eligendi nisi sit totam aspernatur dolorum repellendus. </p>
-            <button>Read More</button>
+            <a href="#blog-pages"><button class="buton"><span>READ MORE</span></button></a>
+           
         </div>
     </div>
     <div class="destaks-container">
@@ -53,7 +71,7 @@
                 <i class="fa-solid fa-gavel fa-rotate-270" id="gavel-icon"></i>
                 <span class="destaks-span" id="destaks-span-gold">Personal Lawyer</span>
                 <div class="divider" id="divider-white"></div>
-                <p class="destaks-paragraph">
+                <p class="destaks-paragraph" id="para-gold">
                     Qualified attorney that
                     you can trust
                 </p>
@@ -87,7 +105,7 @@
                     Maecenas auctor blandit consectetur. Etiam et tellus vulputate, interdum velit eget, gravida metus. Donec porttitor dolor et arcu semper, eget pulvinar mauris volutpat. Proin condimentum mi justo, dictum placerat quam vulputate at. Integer pulvinar odio nec sem eleifend, tincidunt tincidunt erat mollis. Pellentesque cursus ligula libero, sed porta ipsum.
                     </p>
                     <div class="signature-button-container">
-                        <button>Read More</button>
+                        <a href="#blog-pages"><button class="botao-form">Read More</button></a>
                         <img class="signature-img" src="./assets/signature.png" alt="signature">
                     </div>
                 </div>
@@ -212,7 +230,7 @@
     </section>
     <section>
         <div class="background-rgba"></div>
-            <div class="client-numbers" style="background-image: url(	https://webdesign-finder.com/justly/wp-content/uploads/2019/07/slide03.jpg);">
+            <div class="client-numbers" style="background-image: url(./assets/471bec69-c827-445c-935e-de08a1f712d6.jpg);">
                 <div class="numbers-container">
                     <div class="text-numbers">
 
@@ -533,4 +551,5 @@
 
     <script src="https://kit.fontawesome.com/e436e4ec68.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
