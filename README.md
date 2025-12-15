@@ -48,9 +48,7 @@ O projeto foi construído pensando na experiência do usuário, com transições
 
 ## 📸 Layout
 
-<div align="center">
-  <img src="image_ba4eba.jpg" alt="Home Preview" width="100%">
-</div>
+
 
 ### Detalhes do Design
 
@@ -95,7 +93,6 @@ justly/
 ├── LICENSE          # Licença MIT
 └── README.md        # Documentação
 👤 Autor
-<div align="center"> <img src="https://www.google.com/search?q=https://avatars.githubusercontent.com/u/seu-id-aqui%3Fv%3D4" width="100px;" alt="Foto do João Pedro"/>
 
 
 <b>João Pedro Pires Queiroz</b>
