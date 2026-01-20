@@ -2,6 +2,11 @@
 
   <img src="assets/logo.png" alt="logo-justly" width="100">
 
+  <p align="center">
+  <img alt="Preview do Portfólio" src="assets/print-justly.png" width="100%" style="border-radius: 8px; border: 2px solid #00eeff;">
+  </p>
+
+
   <h1>⚖️ Justly - Law Firm Website</h1>
 
   <p>
