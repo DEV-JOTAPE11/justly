@@ -6,27 +6,11 @@
     <title>Justly</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-    <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const elementos = document.querySelectorAll("body *");
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visivel");
-        }
-      });
-    }, { threshold: 0.1 });
-
-    elementos.forEach(el => observer.observe(el));
-  });
-</script>
 
 
 </head>
 <body>
     <header class="navegacao">
-    <nav class="navegacao">
         <a href="./index.html">
             <div class="logo">
                 <img class="logo-img" src="./assets/logo.png" alt="logo-img" />
@@ -34,9 +18,9 @@
             </div>
         </a>
 
-    <button id="mobile-menu-button" class="mobile-menu-icon" aria-label="Abrir menu">
-        <i class="fa-solid fa-bars"></i>
-    </button>
+        <button id="mobile-menu-button" class="mobile-menu-icon" aria-label="Abrir menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
         <ul class="menu">
             <li><a href="#modal" class="menu-link">Home</a></li>
         <li><a href="#pratice-page" class="menu-link">Pratice Areas</a></li>
@@ -44,8 +28,6 @@
         <li><a href="#formulario-main" class="menu-link">Contact Us</a></li>
         <li><a href="#blog-pages" class="menu-link">Pages</a></li>
         </ul>
-    </nav>
-
     </header>
     <div class="modal" id="modal"></div>
     <div class="home-container">

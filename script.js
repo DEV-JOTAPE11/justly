@@ -88,63 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
-  const track = document.querySelector(".imgs-attorneys");
-  const slides = Array.from(track.children);
-  const prevBtn = document.querySelector(".carousel-btn.prev");
-  const nextBtn = document.querySelector(".carousel-btn.next");
 
-  let currentIndex = 0;
-  let autoSlide;
-
-  // Ajusta layout para carrossel
-  track.style.display = "flex";
-  track.style.transition = "transform 0.6s ease";
-  slides.forEach(slide => {
-    slide.style.minWidth = "100%"; // apenas 1 por vez
-  });
-
-  function updateCarousel() {
-    const slideWidth = slides[0].getBoundingClientRect().width;
-    track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-  }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateCarousel();
-  }
-
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateCarousel();
-  }
-
-  nextBtn.addEventListener("click", () => {
-    nextSlide();
-    resetAutoSlide();
-  });
-
-  prevBtn.addEventListener("click", () => {
-    prevSlide();
-    resetAutoSlide();
-  });
-
-  function startAutoSlide() {
-    autoSlide = setInterval(nextSlide, 2000); // troca a cada 4s
-  }
-
-  function resetAutoSlide() {
-    clearInterval(autoSlide);
-    startAutoSlide();
-  }
-
-  // Inicializa
-  updateCarousel();
-  startAutoSlide();
-
-  // Ajusta ao redimensionar
-  window.addEventListener("resize", updateCarousel);
-});
 
 
 const mobileMenuButton = document.getElementById("mobile-menu-button");
@@ -167,6 +111,17 @@ menuLinks.forEach((link) => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const elementos = document.querySelectorAll("body *");
 
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visivel");
+        }
+      });
+    }, { threshold: 0.1 });
 
+    elementos.forEach(el => observer.observe(el));
+  });
 

@@ -18,26 +18,30 @@
   --vidro: rgba(255, 255, 255, 0.05);
 }
 
-  body * {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
+body * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
+}
 
-  /* Quando visível */
-  .visivel {
-    opacity: 1;
-    transform: translateY(0);
-  }
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
 
-
+/* Quando visível */
+.visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
-
-
 
 header {
   position: fixed;
@@ -57,12 +61,13 @@ header {
 }
 
 .logo {
-  width: 200px;
+  width: 150px;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   column-gap: 10px;
+  padding-block: auto;
 }
 
 .logo-img {
@@ -75,25 +80,19 @@ header {
   font-size: 2rem;
 }
 
-
 nav {
   width: 100%;
-  
 }
 
 ul {
   width: 100%;
   display: flex;
   align-items: flex-start; /* alinha no topo */
-  margin-top: 10px;        /* novo */
+  margin-top: 10px; /* novo */
   justify-content: space-between;
   top: 30px !important; /* distância de 50px do topo */
-   position: absolute; /* ou fixed, dependendo do efeito desejado */
-
-
+  position: absolute; /* ou fixed, dependendo do efeito desejado */
 }
-
-
 
 a {
   font-size: 1.1rem;
@@ -110,7 +109,6 @@ a:hover {
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 5s;
 
@@ -144,10 +142,8 @@ a:hover {
   height: 100px;
   padding-left: 0;
   padding-right: 0;
-  background-color: rgba(11, 11, 11, 0.8)
+  background-color: rgba(11, 11, 11, 0.8);
 }
-
-
 
 #menu-icon {
   display: none;
@@ -162,8 +158,6 @@ a:hover {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
-
 
 .home-container {
   background-image: url("./assets/471bec69-c827-445c-935e-de08a1f712d6.jpg");
@@ -192,7 +186,6 @@ a:hover {
   letter-spacing: 10px;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
-  
 }
 
 .presentation-container h1 {
@@ -208,7 +201,6 @@ a:hover {
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 1s;
 
@@ -226,7 +218,6 @@ a:hover {
 
   /* 5. Aplica a animação */
   animation: brilho-dourado 3s linear infinite;
-
 }
 
 .presentation-container p {
@@ -237,7 +228,7 @@ a:hover {
   transition: ease 3s;
 }
 
-/* From Uiverse.io by TimTrayler */ 
+/* From Uiverse.io by TimTrayler */
 .buton {
   margin-top: 70px;
   --hover-shadows: 16px 16px 33px #121212, -16px -16px 33px #303030;
@@ -250,11 +241,13 @@ a:hover {
   cursor: pointer;
   color: white;
   padding: 1em 2em;
-  transition: box-shadow ease-in-out 0.3s, background-color ease-in-out 0.1s,
-    letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
-    width: 20rem;
-    height: 3rem;
- 
+  transition:
+    box-shadow ease-in-out 0.3s,
+    background-color ease-in-out 0.1s,
+    letter-spacing ease-in-out 0.1s,
+    transform ease-in-out 0.1s;
+  width: 20rem;
+  height: 3rem;
 }
 
 .buton:hover {
@@ -262,12 +255,12 @@ a:hover {
 }
 
 .buton:active {
-  box-shadow: var(--hover-shadows), var(--accent) 0px 0px 30px 5px;
+  box-shadow:
+    var(--hover-shadows),
+    var(--accent) 0px 0px 30px 5px;
   background-color: var(--accent);
   transform: scale(0.95);
 }
-
-
 
 .destaks-container {
   width: 100%;
@@ -296,24 +289,28 @@ a:hover {
 }
 
 #square-1 {
-
-background: linear-gradient(120deg,
-    #000000 0%,       /* preto puro */
-    #2e353d 30%,      /* cinza escuro */
-    #323a43 50%,      /* cinza médio */
-    #000000 80%       /* volta para preto */
+  background: linear-gradient(
+    120deg,
+    #000000 0%,
+    /* preto puro */ #2e353d 30%,
+    /* cinza escuro */ #323a43 50%,
+    /* cinza médio */ #000000 80% /* volta para preto */
   );
   background-size: 300% 300%;
   animation: gradientShift 12s ease-in-out infinite;
 }
 
 @keyframes gradientShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-
-
 
 /* Acessibilidade: reduz o movimento quando o usuário prefere menos animação */
 @media (prefers-reduced-motion: reduce) {
@@ -323,18 +320,13 @@ background: linear-gradient(120deg,
   }
 }
 
-
-
-
-
 #square-1 i {
-   background: linear-gradient(
+  background: linear-gradient(
     90deg,
     /* Direção do gradiente */ #c39a58,
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 0.5s;
 
@@ -355,7 +347,6 @@ background: linear-gradient(120deg,
 
   font-size: 3rem;
 }
-
 
 .destaks-span {
   font-size: 1.5rem;
@@ -374,11 +365,12 @@ background: linear-gradient(120deg,
 }
 
 #square-2 {
-  background: linear-gradient(120deg,
-    #000000 0%,       /* preto puro */
-    #2e353d 30%,      /* cinza escuro */
-    #323a43 50%,      /* cinza médio */
-    #000000 80%       /* volta para preto */
+  background: linear-gradient(
+    120deg,
+    #000000 0%,
+    /* preto puro */ #2e353d 30%,
+    /* cinza escuro */ #323a43 50%,
+    /* cinza médio */ #000000 80% /* volta para preto */
   );
   background-size: 300% 300%;
   animation: gradientShift 12s ease-in-out infinite;
@@ -386,13 +378,12 @@ background: linear-gradient(120deg,
 
 #gavel-icon {
   font-size: 3rem;
-    background: linear-gradient(
+  background: linear-gradient(
     90deg,
     /* Direção do gradiente */ #c39a58,
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 0.5s;
 
@@ -414,28 +405,26 @@ background: linear-gradient(120deg,
   font-size: 3rem;
 }
 
-
-
 #square-3 {
   padding: 0 100px;
-  background: linear-gradient(120deg,
-    #000000 0%,       /* preto puro */
-    #2e353d 30%,      /* cinza escuro */
-    #323a43 50%,      /* cinza médio */
-    #000000 80%       /* volta para preto */
+  background: linear-gradient(
+    120deg,
+    #000000 0%,
+    /* preto puro */ #2e353d 30%,
+    /* cinza escuro */ #323a43 50%,
+    /* cinza médio */ #000000 80% /* volta para preto */
   );
   background-size: 300% 300%;
   animation: gradientShift 12s ease-in-out infinite;
 }
 
 #square-3 i {
-    background: linear-gradient(
+  background: linear-gradient(
     90deg,
     /* Direção do gradiente */ #c39a58,
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 0.5s;
 
@@ -510,13 +499,12 @@ background: linear-gradient(120deg,
 
 .signature-title h1 {
   font-size: 2.5rem;
-   background: linear-gradient(
+  background: linear-gradient(
     90deg,
     /* Direção do gradiente */ #c39a58,
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 3s;
 
@@ -558,8 +546,6 @@ background: linear-gradient(120deg,
   justify-content: space-between;
 }
 
-
-
 .botao-form {
   color: var(--claro);
   background: linear-gradient(90deg, #c39a58, #fff3d5, #c39a58);
@@ -579,8 +565,6 @@ background: linear-gradient(120deg,
   box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
   color: white;
 }
-
-
 
 .signature-button-container img {
   width: 100%;
@@ -609,11 +593,12 @@ background: linear-gradient(120deg,
 .our-services-container {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(120deg,
-    #000000 0%,       /* preto puro */
-    #2e353d 30%,      /* cinza escuro */
-    #323a43 50%,      /* cinza médio */
-    #000000 80%       /* volta para preto */
+  background: linear-gradient(
+    120deg,
+    #000000 0%,
+    /* preto puro */ #2e353d 30%,
+    /* cinza escuro */ #323a43 50%,
+    /* cinza médio */ #000000 80% /* volta para preto */
   );
   background-size: 300% 300%;
   animation: gradientShift 12s ease-in-out infinite;
@@ -642,13 +627,12 @@ background: linear-gradient(120deg,
 .our-services-title h1 {
   margin: 0;
   font-size: 3.5rem;
-   background: linear-gradient(
+  background: linear-gradient(
     90deg,
     /* Direção do gradiente */ #c39a58,
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 3s;
 
@@ -667,7 +651,6 @@ background: linear-gradient(120deg,
   /* 5. Aplica a animação */
   animation: brilho-dourado 3s linear infinite;
 }
-
 
 .our-services-content {
   width: 100%;
@@ -680,13 +663,12 @@ background: linear-gradient(120deg,
 
 #our-services-divider {
   width: 15%;
-   background: linear-gradient(
+  background: linear-gradient(
     90deg,
     /* Direção do gradiente */ #c39a58,
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 3s;
 
@@ -705,8 +687,6 @@ background: linear-gradient(120deg,
   /* 5. Aplica a animação */
   animation: brilho-dourado 3s linear infinite;
 }
-  
-
 
 .our-services-square {
   display: flex;
@@ -728,13 +708,12 @@ background: linear-gradient(120deg,
 }
 
 #service-icon {
-   background: linear-gradient(
+  background: linear-gradient(
     90deg,
     /* Direção do gradiente */ #c39a58,
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 3s;
 
@@ -755,7 +734,6 @@ background: linear-gradient(120deg,
   font-size: 3rem;
 }
 
-
 #service-icon:hover {
   color: #fff;
   cursor: pointer;
@@ -770,13 +748,12 @@ background: linear-gradient(120deg,
 }
 
 .services-title:hover {
-   background: linear-gradient(
+  background: linear-gradient(
     90deg,
     /* Direção do gradiente */ #c39a58,
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 3s;
 
@@ -797,7 +774,6 @@ background: linear-gradient(120deg,
   cursor: pointer;
   transition: 1.2s;
 }
-
 
 .service-description {
   color: #fff;
@@ -840,7 +816,6 @@ background: linear-gradient(120deg,
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 3s;
 
@@ -873,7 +848,6 @@ background: linear-gradient(120deg,
   overflow: hidden;
 }
 
-
 .cards {
   width: 100%;
   height: 100%;
@@ -889,7 +863,6 @@ background: linear-gradient(120deg,
   border-radius: 20px;
   display: none;
   text-align: center;
-
 }
 
 .testimonial-img {
@@ -900,10 +873,9 @@ background: linear-gradient(120deg,
   background-position: 50% 50%;
   display: flex;
   justify-content: center; /* Centraliza horizontalmente */
-  align-items: center;     /* Centraliza verticalmente (se tiver altura definida) */
+  align-items: center; /* Centraliza verticalmente (se tiver altura definida) */
   margin: auto;
-  margin-top: 70px;    
-
+  margin-top: 70px;
 }
 
 #testimony-icon {
@@ -914,7 +886,6 @@ background: linear-gradient(120deg,
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 3s;
 
@@ -941,7 +912,7 @@ background: linear-gradient(120deg,
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   color: white;
   border: none;
   font-size: 2rem;
@@ -958,20 +929,15 @@ background: linear-gradient(120deg,
   right: 10px;
 }
 
-
-
 .testimony {
   text-align: center;
   color: #5c6f85;
   font-size: 1.2rem;
   font-style: italic;
   font-family: "Poppins", sans-serif;
-   margin: 20px 0;       /* Espaço acima e abaixo do texto do depoimento */
-  line-height: 1.6;     /* Altura da linha para facilitar a leitura */
+  margin: 20px 0; /* Espaço acima e abaixo do texto do depoimento */
+  line-height: 1.6; /* Altura da linha para facilitar a leitura */
 }
-
-
-
 
 .testimonial-name {
   font-size: 1, 5rem;
@@ -981,13 +947,12 @@ background: linear-gradient(120deg,
 
 .testimonial-profession {
   font-size: 1, 3rem;
-   background: linear-gradient(
+  background: linear-gradient(
     90deg,
     /* Direção do gradiente */ #c39a58,
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 3s;
 
@@ -1008,8 +973,8 @@ background: linear-gradient(120deg,
   cursor: pointer;
   transition: 1.2s;
   font-family: "Poppins", sans-serif;
-  display: block;       /* Garante que fique em uma nova linha */
-  margin-top: 5px;  
+  display: block; /* Garante que fique em uma nova linha */
+  margin-top: 5px;
 }
 
 #testimonial-1 {
@@ -1039,11 +1004,12 @@ background: linear-gradient(120deg,
 }
 
 .form-content {
-  background: linear-gradient(120deg,
-    #000000 0%,       /* preto puro */
-    #2e353d 30%,      /* cinza escuro */
-    #323a43 50%,      /* cinza médio */
-    #000000 80%       /* volta para preto */
+  background: linear-gradient(
+    120deg,
+    #000000 0%,
+    /* preto puro */ #2e353d 30%,
+    /* cinza escuro */ #323a43 50%,
+    /* cinza médio */ #000000 80% /* volta para preto */
   );
   background-size: 300% 300%;
   animation: gradientShift 12s ease-in-out infinite;
@@ -1083,7 +1049,6 @@ background: linear-gradient(120deg,
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 3s;
 
@@ -1103,10 +1068,9 @@ background: linear-gradient(120deg,
   animation: brilho-dourado 3s linear infinite;
   cursor: pointer;
   transition: 1.2s;
-  display: block;       /* Garante que fique em uma nova linha */
-  margin-top: 5px;  
+  display: block; /* Garante que fique em uma nova linha */
+  margin-top: 5px;
 }
-
 
 #form-divider {
   width: 15%;
@@ -1231,11 +1195,12 @@ background: linear-gradient(120deg,
 footer {
   width: 100%;
   height: 80vh;
-    background: linear-gradient(120deg,
-    #000000 0%,       /* preto puro */
-    #2e353d 30%,      /* cinza escuro */
-    #323a43 50%,      /* cinza médio */
-    #000000 80%       /* volta para preto */
+  background: linear-gradient(
+    120deg,
+    #000000 0%,
+    /* preto puro */ #2e353d 30%,
+    /* cinza escuro */ #323a43 50%,
+    /* cinza médio */ #000000 80% /* volta para preto */
   );
   background-size: 300% 300%;
   animation: gradientShift 12s ease-in-out infinite;
@@ -1292,27 +1257,19 @@ footer {
   width: 100%;
 }
 
-
-
-
 .about-text {
   display: flex;
   flex-direction: column;
-  align-items: center;       /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza horizontalmente */
   justify-content: flex-start; /* antes era center */
-  padding: 40px 20px 20px;     /* reduzi o padding para subir o conteúdo */
-  gap: 25px;                   /* espaço entre título, texto e ícones */
-  min-height: 60vh;    /* Centraliza verticalmente */
-      /* Centraliza o texto */       /* Espaço interno */    
+  padding: 40px 20px 20px; /* reduzi o padding para subir o conteúdo */
+  gap: 25px; /* espaço entre título, texto e ícones */
+  min-height: 60vh; /* Centraliza verticalmente */
+  /* Centraliza o texto */ /* Espaço interno */
 }
 
 .about-text h2 {
-   background: linear-gradient(
-    90deg,
-    #c39a58,
-    #fff3d5,
-    #c39a58
-  );
+  background: linear-gradient(90deg, #c39a58, #fff3d5, #c39a58);
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -1323,29 +1280,27 @@ footer {
   letter-spacing: 5px;
   font-weight: 700;
   margin: 0;
-
 }
 
 .footer-content {
   display: flex;
-  justify-content: center;    /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza horizontalmente */
   margin-top: 10px;
-
 }
 
 .about-text p {
   font-family: "Poppins", sans-serif;
-  font-size: 1.8rem;          /* um pouco menor para melhor leitura */
+  font-size: 1.8rem; /* um pouco menor para melhor leitura */
   font-weight: 500;
   color: #fff;
   line-height: 2;
-  max-width: 900px;    
+  max-width: 900px;
 }
 
 .social-media {
   display: flex;
-  justify-content: center;    /* Centraliza os ícones */
-  gap: 25px;    
+  justify-content: center; /* Centraliza os ícones */
+  gap: 25px;
 }
 
 .social-media i {
@@ -1353,7 +1308,6 @@ footer {
   color: #fff;
   cursor: pointer;
   transition: color 0.3s ease;
-
 }
 
 #facebook-icon:hover {
@@ -1509,20 +1463,18 @@ footer {
   letter-spacing: 6px;
   font-weight: 400;
   color: #fff;
-
 }
 
 .choose-us {
   font-size: 3.5rem;
   font-weight: 500;
   z-index: 2;
-   background: linear-gradient(
+  background: linear-gradient(
     90deg,
     /* Direção do gradiente */ #c39a58,
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 3s;
 
@@ -1577,10 +1529,8 @@ footer {
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 3s;
-
 }
 
 .counter-text {
@@ -1595,13 +1545,12 @@ footer {
 }
 
 .number-trust-client {
-   background: linear-gradient(
+  background: linear-gradient(
     90deg,
     /* Direção do gradiente */ #c39a58,
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 3s;
 
@@ -1627,13 +1576,7 @@ footer {
   margin-top: 80px;
   margin-bottom: 0.25em;
   text-align: center;
- 
 }
-
-
-
-
-
 
 .our-attorneys {
   height: 110vh;
@@ -1664,9 +1607,15 @@ footer {
 
 .imgs-attorneys {
   width: 100%;
-  height: 100%;
   display: flex;
-  transition: transform 0.3s ease-in-out;
+  overflow-x: auto; /* Permite rolar para o lado se necessário */
+  scroll-snap-type: x mandatory; /* Faz o scroll travar certinho na imagem */
+  /* Esconde a barra de rolagem para ficar mais bonito */
+  scrollbar-width: none;
+}
+
+.imgs-attorneys::-webkit-scrollbar {
+    display: none;
 }
 
 #attorney-1 {
@@ -1691,22 +1640,24 @@ footer {
 }
 
 .img-attorney {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   row-gap: 10px;
   padding: 10px 40px 40px 40px;
   cursor: pointer;
+  width: 100%; /* Garante que o card ocupe o espaço correto */
+  flex-shrink: 0; /* Impede que o card "amasse" se faltar espaço */
+  height: 100%;
 }
 
 .attorney-name {
-  background: linear-gradient(120deg,
-    #000000 0%,       /* preto puro */
-    #2e353d 30%,      /* cinza escuro */
-    #323a43 50%,      /* cinza médio */
-    #000000 80%       /* volta para preto */
+  background: linear-gradient(
+    120deg,
+    #000000 0%,
+    /* preto puro */ #2e353d 30%,
+    /* cinza escuro */ #323a43 50%,
+    /* cinza médio */ #000000 80% /* volta para preto */
   );
   background-size: 300% 300%;
   animation: gradientShift 12s ease-in-out infinite;
@@ -1716,7 +1667,6 @@ footer {
   width: 100%;
   margin-top: 600px;
   height: 60px;
-  
 }
 
 .name-lawyer {
@@ -1731,13 +1681,12 @@ footer {
 
 .name-lawyer:hover {
   transition: 1s;
-     background: linear-gradient(
+  background: linear-gradient(
     90deg,
     /* Direção do gradiente */ #c39a58,
     /* Tom dourado mais escuro */ #fff3d5,
     /* Tom de brilho claro (quase branco) */ #c39a58
       /* Repete o tom escuro para um loop suave */
-      
   );
   transition: ease 3s;
 
@@ -1761,9 +1710,7 @@ footer {
   font-weight: 300;
   margin-bottom: 0.25em;
   text-align: center;
- 
 }
-
 
 .blog-news {
   height: 150vh;
@@ -2049,7 +1996,6 @@ footer {
   .submit-button {
     margin-top: 10px;
   }
-
 }
 
 @media (max-width: 1440px) {
@@ -2094,7 +2040,6 @@ footer {
   #user-message-input {
     width: 95%;
   }
-
 
   .imgs-text-blogs {
     margin-left: 80px;
@@ -2200,8 +2145,6 @@ footer {
     margin-top: 10px;
   }
 
-
-
   .form-content {
     padding: 120px 20px 60px 20px;
     height: 100%;
@@ -2239,7 +2182,6 @@ footer {
     margin-top: 10px;
   }
 
-
   .theme-posts {
     width: 50%;
     margin-top: 50px;
@@ -2259,7 +2201,7 @@ footer {
     position: relative;
     justify-content: space-between;
   }
-  
+
   .testimonials-cards-container {
     width: 100%;
   }
@@ -2268,9 +2210,9 @@ footer {
     display: none;
   }
 
-.cards {
-  width: 100%;
-}
+  .cards {
+    width: 100%;
+  }
 
   .attorney-img-container {
     display: flex;
@@ -2375,9 +2317,6 @@ footer {
     height: 85vh;
   }
 
- 
-
-
   .form-container {
     flex-direction: column;
   }
@@ -2462,7 +2401,6 @@ footer {
 }
 
 @media (max-width: 855px) {
-
   .copyright {
     background-color: #000;
   }
@@ -2479,7 +2417,9 @@ footer {
     display: none;
   }
 
-  .footer-content {display: none;}
+  .footer-content {
+    display: none;
+  }
 
   nav {
     display: none;
@@ -2540,8 +2480,6 @@ footer {
     height: 85vh;
   }
 
-
-
   .form-container {
     flex-direction: column;
   }
@@ -2561,7 +2499,6 @@ footer {
   #user-message-input {
     width: 97%;
   }
-
 
   .footer-content {
     flex-direction: column;
@@ -2588,14 +2525,9 @@ footer {
 }
 
 @media (max-width: 768px) {
-
-  .logo {
-    display: none;
-  }
-
-    .navegacao {
+  .navegacao {
     display: flex;
-    justify-content: flex-end; /* Alinha o ícone à direita */
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
   }
@@ -2668,7 +2600,6 @@ footer {
     margin-left: 0;
   }
 
-
   .testimonials-container {
     height: 100vh;
   }
@@ -2680,7 +2611,6 @@ footer {
   .signature-content {
     width: 45%;
   }
-
 }
 
 @media (max-width: 600px) {
@@ -2732,7 +2662,6 @@ footer {
     justify-content: center;
   }
 
-
   .our-services-content {
     padding: 0 10px 0 20px;
   }
@@ -2742,15 +2671,9 @@ footer {
     padding: 20px 10px 0 10px;
   }
 
-
-
   #user-message-input {
     width: 95%;
   }
-
-
-
- 
 }
 
 @media (max-width: 430px) {
@@ -2759,8 +2682,9 @@ footer {
   }
 
   .img-blog-text {
-    width: 415px;
-    margin-left: 20px;
+    width: 100%; /* <--- MUDE DE 415px PARA 100% */
+    margin-left: 0; /* Ajuste a margem para não empurrar o conteúdo */
+    padding: 0 20px; /* Adicione um padding para não colar na borda */
   }
 
   .two-blogs-imgs {
@@ -2870,8 +2794,6 @@ footer {
     margin-bottom: 20px;
   }
 
-  
-
   .form-container {
     height: 200vh;
   }
@@ -2936,7 +2858,6 @@ footer {
 }
 
 @media (max-width: 414px) {
- 
   #our-blog-news {
     font-size: 2.5rem;
   }
@@ -2964,15 +2885,12 @@ footer {
 }
 
 @media (max-width: 390px) {
-
-
   #user-message-input {
     width: 93%;
   }
 }
 
 @media (max-width: 375px) {
-
   .blog-news {
     height: 360vh;
   }
@@ -3001,21 +2919,18 @@ footer {
 }
 
 @media (max-width: 344px) {
-
-
   #user-message-input {
     width: 92%;
   }
 }
 
 @media (max-height: 670px) {
- }
+}
 
-  #number-none {
-    display: none;
-  }
+#number-none {
+  display: none;
+}
 
-  .our-attorneys {
-    height: 155vh;
-  }
-
+.our-attorneys {
+  height: 155vh;
+}
